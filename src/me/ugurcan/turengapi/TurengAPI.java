@@ -28,17 +28,25 @@ public class TurengAPI {
 				if(element.select("td").size() < 2)
 					continue;
 				
-				String word = element.select("a").text();
-				word = word.substring(input.length() + 1);
+				String word = element.select("td").get(3).select("a").text();
+				
+				if(!word.equalsIgnoreCase(input))
+					continue;
+				
+				String meaning = element.select("td").get(4).text();
+				//word = word.substring(input.length() + 1);
 				String type = element.select("i").text();
 				String category = element.select("td").get(1).text();
 				
-				results.add(new Result(word, type, category));
+				results.add(new Result(meaning, type, category));
 			}
 			
 		}catch(Exception ex){
-			System.out.println("No result found!");
+			results.clear();
 		}
+		
+		if(results.isEmpty())
+			System.out.println("No result found!");
 		
 		return results;
 		

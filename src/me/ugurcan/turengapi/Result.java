@@ -2,11 +2,11 @@ package me.ugurcan.turengapi;
 
 public class Result {
 	
-	private String word, type, category;
-	
-	public Result(String word, String type, String category){
+	private String meaning, type, category;
+
+	public Result(String meaning, String type, String category){
 		
-		this.word = word;
+		this.meaning = meaning;
 		if(type.equals(""))
 			this.type = "-";
 		else
@@ -15,12 +15,13 @@ public class Result {
 		
 	}
 
-	public String getWord() {
-		return word;
+	
+	public String getMeaning() {
+		return meaning;
 	}
 
-	public void setWord(String word) {
-		this.word = word;
+	public void setMeaning(String meaning) {
+		this.meaning = meaning;
 	}
 
 	public String getType() {
@@ -41,7 +42,7 @@ public class Result {
 	
 	@Override
 	public String toString(){
-		return category + " -> " + "(" + type + ") " +  word;
+		return category + " -> " + "(" + type + ") " +  meaning;
 	}
 
 }
