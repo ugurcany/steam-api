@@ -8,9 +8,10 @@ public class Test {
 
 		TurengAPI tureng = new TurengAPI();
 		
-		ArrayList<Result> results = tureng.translate("türk atasözü");
+		// input can be in Turkish or English
+		ArrayList<Result> results = tureng.translate("warehouse");
 		
-		for(Result result : results)
+		for (Result result : results)
 			System.out.println( result.toString() );
 
 	}
