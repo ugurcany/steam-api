@@ -14,7 +14,6 @@ public class TurengAPI {
 		
 	}
 
-	
 	public ArrayList<Result> translate(String input){
 		
 		ArrayList<Result> results = new ArrayList<Result>();
@@ -33,7 +32,7 @@ public class TurengAPI {
 				if(!word.equalsIgnoreCase(input))
 					continue;
 				
-				String meaning = element.select("td").get(4).text();
+				String meaning = element.select("td").get(4).select("a").text();
 				//word = word.substring(input.length() + 1);
 				String type = element.select("i").text();
 				String category = element.select("td").get(1).text();
