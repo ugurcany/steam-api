@@ -2,11 +2,11 @@ package me.ugurcan.turengapi;
 
 public class Result {
 	
-	private String meaning, type, category;
+	private String translation, type, category;
 
-	public Result(String meaning, String type, String category){
+	public Result(String translation, String type, String category){
 		
-		this.meaning = meaning;
+		this.translation = translation;
 		if(type.equals(""))
 			this.type = "-";
 		else
@@ -15,34 +15,37 @@ public class Result {
 		
 	}
 
-	
-	public String getMeaning() {
-		return meaning;
+	// translation
+	public String getTranslation() {
+		return translation;
 	}
 
-	public void setMeaning(String meaning) {
-		this.meaning = meaning;
+	protected void setTranslation(String translation) {
+		this.translation = translation;
 	}
 
+	// type
 	public String getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	protected void setType(String type) {
 		this.type = type;
 	}
 
+	// category
 	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	protected void setCategory(String category) {
 		this.category = category;
 	}
 	
+	
 	@Override
 	public String toString(){
-		return category + " -> " + "(" + type + ") " +  meaning;
+		return category + " -> " + "(" + type + ") " +  translation;
 	}
 
 }

@@ -1,4 +1,6 @@
-## TurengAPI - Turkish <-> English Dictionary API in Java
+## TurengAPI - Turkish <-> English Dictionary API
+
+Data source: http://tureng.com/
 
 How to use:
 ```java

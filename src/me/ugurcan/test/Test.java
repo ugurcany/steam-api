@@ -1,6 +1,9 @@
-package me.ugurcan.turengapi;
+package me.ugurcan.test;
 
 import java.util.ArrayList;
+
+import me.ugurcan.turengapi.Result;
+import me.ugurcan.turengapi.TurengAPI;
 
 public class Test {
 
