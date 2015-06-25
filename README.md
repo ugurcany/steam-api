@@ -1,6 +1,6 @@
 ## TurengAPI - Turkish <-> English Dictionary API
 
-Data source: http://tureng.com/
+*Data source: http://tureng.com/*
 
 How to use:
 ```java
