@@ -42,7 +42,7 @@ public class Result {
 		this.category = category;
 	}
 	
-	
+	// print neatly
 	@Override
 	public String toString(){
 		return category + " -> " + "(" + type + ") " +  translation;
