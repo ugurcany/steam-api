@@ -10,7 +10,8 @@ TurengAPI tureng = new TurengAPI();
 ArrayList<Result> results = tureng.translate("hava durumu");
 
 for (Result result : results)
-  System.out.println( result.toString() );
+	System.out.println( result.getCategory() + " -> " + "(" + result.getType() + ") " +  result.getTranslation() );
+	// or System.out.println( result.toString() );
 ```
 
 **Output:**
