@@ -21,22 +21,22 @@ public class TurengAPI {
 		try{
 			
 			Document doc = Jsoup.connect("http://tureng.com/search/" + input).get();
-			Elements elements = doc.select("table").first().select("tr");
-			
+			Elements elements = doc.getElementsByClass("searchResultsTable").select("tr");
+
 			for(Element element : elements){
 				if(element.select("td").size() < 2)
 					continue;
 				
-				String word = element.select("td").get(3).select("a").text();
+				String source = element.select("td").get(3).select("a").text();
 				
-				if(!word.equalsIgnoreCase(input))
-					continue;
+				/*if(!word.equalsIgnoreCase(input))
+					continue;*/
 				
 				String translation = element.select("td").get(4).select("a").text();
 				String type = element.select("i").text();
 				String category = element.select("td").get(1).text();
 				
-				results.add(new Result(translation, type, category));
+				results.add(new Result(source, translation, type, category));
 			}
 			
 		}catch(Exception ex){
@@ -44,7 +44,7 @@ public class TurengAPI {
 		}
 		
 		if(results.isEmpty())
-			System.out.println("No result found!");
+			results.add(new Result("No result found!", "-", "-", "-"));
 		
 		return results;
 		

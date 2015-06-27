@@ -2,10 +2,11 @@ package me.ugurcan.turengapi;
 
 public class Result {
 	
-	private String translation, type, category;
+	private String source, translation, type, category;
 
-	public Result(String translation, String type, String category){
+	public Result(String source, String translation, String type, String category){
 		
+		this.source = source;
 		this.translation = translation;
 		if(type.equals(""))
 			this.type = "-";
@@ -13,6 +14,15 @@ public class Result {
 			this.type = type;
 		this.category = category;
 		
+	}
+	
+	// source
+	public String getSource() {
+		return source;
+	}
+
+	protected void setSource(String source) {
+		this.source = source;
 	}
 
 	// translation
@@ -45,7 +55,7 @@ public class Result {
 	// print neatly
 	@Override
 	public String toString(){
-		return category + " -> " + "(" + type + ") " +  translation;
+		return source + " -> " + "(" + category + ", " + type + ") " +  translation;
 	}
 
 }
