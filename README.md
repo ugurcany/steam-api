@@ -1,4 +1,6 @@
-## TurengAPI - Turkish <-> English Dictionary
+## TurengAPI
+
+Turkish <-> English Dictionary
 
 *Data source: http://tureng.com/*
 
