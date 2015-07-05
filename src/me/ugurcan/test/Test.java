@@ -12,7 +12,7 @@ public class Test {
 		TurengAPI tureng = new TurengAPI();
 		
 		// input can be in Turkish or English
-		ArrayList<Result> results = tureng.translate("hava durumu");
+		ArrayList<Result> results = tureng.translate("grip");
 		
 		for (Result result : results)
 			System.out.println( result );
