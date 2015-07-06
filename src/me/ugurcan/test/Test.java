@@ -15,7 +15,7 @@ public class Test {
 		SozlukAPI zargan = new ZarganAPI();
 		
 		// input can be in Turkish or English
-		ArrayList<Result> results = tureng.translate("ÇOLUK ÇOCUK");
+		ArrayList<Result> results = tureng.translate("ÇOLUK ÇOCUĞA KARIŞMAK");
 		
 		for (Result result : results)
 			System.out.println( result );
@@ -23,7 +23,7 @@ public class Test {
 		System.out.println();
 
 		// input can be in Turkish or English
-		results = zargan.translate("ÇOLUK ÇOCUK");
+		results = zargan.translate("ÇOLUK ÇOCUĞA KARIŞMAK");
 
 		for (Result result : results)
 			System.out.println( result );

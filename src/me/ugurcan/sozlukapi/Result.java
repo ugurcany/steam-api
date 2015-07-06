@@ -13,7 +13,10 @@ public class Result {
 			this.type = "-";
 		else
 			this.type = type;
-		this.category = category;
+		if(category.equals(""))
+			this.category = "-";
+		else
+			this.category = category;
 		
 	}
 	

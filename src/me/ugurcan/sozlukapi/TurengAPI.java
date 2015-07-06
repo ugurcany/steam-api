@@ -33,10 +33,7 @@ public class TurengAPI extends SozlukAPI {
 				
 				String sourceLang = element.select("td").get(3).attr("lang");
 				String source = element.select("td").get(3).select("a").text();
-				
-				/*if(!word.equalsIgnoreCase(input))
-					continue;*/
-				
+
 				String translationLang = element.select("td").get(4).attr("lang");
 				String translation = element.select("td").get(4).select("a").text();
 				

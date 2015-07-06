@@ -54,9 +54,6 @@ public class ZarganAPI extends SozlukAPI {
 			String sourceLang = element.select("img").get(1).attr("data-from-lang");
 			String source = element.getElementsByClass("resultLink").get(0).text();
 
-				/*if(!word.equalsIgnoreCase(input))
-					continue;*/
-
 			String translationLang = element.select("img").get(1).attr("data-to-lang");
 			String translation = element.getElementsByClass("resultLink").get(1).text();
 
