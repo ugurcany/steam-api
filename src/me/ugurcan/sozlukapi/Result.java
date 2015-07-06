@@ -1,10 +1,10 @@
-package me.ugurcan.turengapi;
+package me.ugurcan.sozlukapi;
 
-public class TurengResult {
+public class Result {
 	
 	private String source, translation, lang2lang, type, category;
 
-	public TurengResult(String source, String translation, String lang2lang, String type, String category){
+	public Result(String source, String translation, String lang2lang, String type, String category){
 		
 		this.source = source;
 		this.translation = translation;

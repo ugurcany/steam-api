@@ -1,4 +1,4 @@
-package me.ugurcan.turengapi;
+package me.ugurcan.sozlukapi;
 
 import java.util.ArrayList;
 
@@ -13,9 +13,13 @@ public class TurengAPI {
 
 	}
 
-	public ArrayList<TurengResult> translate(String input){
+	public ArrayList<Result> translate(String input){
+
+		input = Utils.replaceTurkishChars(input);
+
+		//System.out.println(input);
 		
-		ArrayList<TurengResult> results = new ArrayList<TurengResult>();
+		ArrayList<Result> results = new ArrayList<Result>();
 			
 		try{
 			
@@ -39,7 +43,7 @@ public class TurengAPI {
 				String type = element.select("i").text();
 				String category = element.select("td").get(1).text();
 				
-				results.add(new TurengResult(source, translation, lang2lang, type, category));
+				results.add(new Result(source, translation, lang2lang, type, category));
 			}
 			
 		}catch(Exception ex){
@@ -47,7 +51,7 @@ public class TurengAPI {
 		}
 		
 		if(results.isEmpty())
-			results.add(new TurengResult("No result found!", "-", "-", "-", "-"));
+			results.add(new Result("No result found!", "-", "-", "-", "-"));
 		
 		return results;
 		
