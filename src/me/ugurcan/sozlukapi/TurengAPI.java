@@ -7,12 +7,13 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class TurengAPI {
+public class TurengAPI extends SozlukAPI {
 	
 	public TurengAPI(){
 
 	}
 
+	@Override
 	public ArrayList<Result> translate(String input){
 
 		input = Utils.replaceTurkishChars(input);

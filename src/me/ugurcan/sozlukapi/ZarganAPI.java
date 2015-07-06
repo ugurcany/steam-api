@@ -7,12 +7,13 @@ import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 
-public class ZarganAPI {
-	
+public class ZarganAPI extends SozlukAPI {
+
 	public ZarganAPI(){
 
 	}
 
+	@Override
 	public ArrayList<Result> translate(String input){
 
 		input = Utils.replaceTurkishChars(input);
