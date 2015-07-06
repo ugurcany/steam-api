@@ -10,8 +10,7 @@ import org.jsoup.select.Elements;
 public class TurengAPI {
 	
 	public TurengAPI(){
-		
-		
+
 	}
 
 	public ArrayList<Result> translate(String input){
