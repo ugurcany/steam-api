@@ -1,8 +1,9 @@
-## TurengAPI
+## SozlukAPI
 
 Turkish <-> English Dictionary
 
-*Data source: http://tureng.com/*
+*Data source 1: http://tureng.com/*
+*Data source 2: http://www2.zargan.com/*
 
 **How to use:**
 ```java
