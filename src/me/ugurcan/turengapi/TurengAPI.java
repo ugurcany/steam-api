@@ -13,9 +13,9 @@ public class TurengAPI {
 
 	}
 
-	public ArrayList<Result> translate(String input){
+	public ArrayList<TurengResult> translate(String input){
 		
-		ArrayList<Result> results = new ArrayList<Result>();
+		ArrayList<TurengResult> results = new ArrayList<TurengResult>();
 			
 		try{
 			
@@ -39,7 +39,7 @@ public class TurengAPI {
 				String type = element.select("i").text();
 				String category = element.select("td").get(1).text();
 				
-				results.add(new Result(source, translation, lang2lang, type, category));
+				results.add(new TurengResult(source, translation, lang2lang, type, category));
 			}
 			
 		}catch(Exception ex){
@@ -47,7 +47,7 @@ public class TurengAPI {
 		}
 		
 		if(results.isEmpty())
-			results.add(new Result("No result found!", "-", "-", "-", "-"));
+			results.add(new TurengResult("No result found!", "-", "-", "-", "-"));
 		
 		return results;
 		

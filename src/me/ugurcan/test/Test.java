@@ -2,8 +2,10 @@ package me.ugurcan.test;
 
 import java.util.ArrayList;
 
-import me.ugurcan.turengapi.Result;
+import me.ugurcan.zarganapi.ZarganAPI;
 import me.ugurcan.turengapi.TurengAPI;
+import me.ugurcan.turengapi.TurengResult;
+import me.ugurcan.zarganapi.ZarganResult;
 
 public class Test {
 
@@ -12,9 +14,18 @@ public class Test {
 		TurengAPI tureng = new TurengAPI();
 		
 		// input can be in Turkish or English
-		ArrayList<Result> results = tureng.translate("grip");
+		ArrayList<TurengResult> resultsTureng = tureng.translate("allying");
 		
-		for (Result result : results)
+		/*for (TurengResult result : resultsTureng)
+			System.out.println( result );*/
+
+
+		ZarganAPI zargan = new ZarganAPI();
+
+		// input can be in Turkish or English
+		ArrayList<ZarganResult> resultsZargan = zargan.translate("pay");
+
+		for (ZarganResult result : resultsZargan)
 			System.out.println( result );
 
 	}
