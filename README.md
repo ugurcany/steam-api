@@ -2,12 +2,6 @@
 
 Turkish <-> English Dictionary
 
-*Data sources:*
-```
-http://tureng.com/
-http://www2.zargan.com/
-```
-
 **How to use:**
 ```java
 TurengAPI tureng = new TurengAPI();
@@ -196,4 +190,10 @@ en-tr:	mixed grip -> (Sport, -) karýþýk tutuþ
 en-tr:	racket handle grip -> (Sport, -) raket tutuþu
 en-tr:	regular grip -> (Sport, -) düz tutuþ
 en-tr:	reserve grip -> (Sport, -) ters tutuþ
+```
+
+*Data sources:*
+```
+http://tureng.com/
+http://www2.zargan.com/
 ```
