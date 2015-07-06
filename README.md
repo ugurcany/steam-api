@@ -193,7 +193,5 @@ en-tr:	reserve grip -> (Sport, -) ters tutuþ
 ```
 
 *Data sources:*
-```
-http://tureng.com/
-http://www2.zargan.com/
-```
+* *http://tureng.com/*
+* *http://www2.zargan.com/*
