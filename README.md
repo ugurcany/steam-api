@@ -2,8 +2,11 @@
 
 Turkish <-> English Dictionary
 
-*Data source 1: http://tureng.com/*
-*Data source 2: http://www2.zargan.com/*
+*Data sources:*
+```
+http://tureng.com/
+http://www2.zargan.com/
+```
 
 **How to use:**
 ```java
