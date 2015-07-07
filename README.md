@@ -16,7 +16,7 @@ for (Result result : results)
 System.out.println();
 
 // input can be in Turkish or English
-results = zargan.translate("geri götürmek");
+results = zargan.translate("geri gÃ¶tÃ¼rmek");
 
 for (Result result : results)
 	System.out.println( result );
@@ -24,27 +24,27 @@ for (Result result : results)
 
 **Output:**
 ```
-en-tr:	pay out -> (General, v.) acýsýný çýkarmak
-en-tr:	pay out -> (General, v.) ödemek (parayý)
+en-tr:	pay out -> (General, v.) acÄ±sÄ±nÄ± Ã§Ä±karmak
+en-tr:	pay out -> (General, v.) Ã¶demek (parayÄ±)
 en-tr:	pay out -> (General, v.) harcamak
-en-tr:	pay out -> (General, v.) gevþetmek (ip/zincir vb'ni)
-en-tr:	pay out -> (General, v.) ödemek
-en-tr:	pay out -> (General, v.) acýsýný çýkartmak
-en-tr:	pay out -> (Trade/Economic, -) ödemek
+en-tr:	pay out -> (General, v.) gevÅŸetmek (ip/zincir vb'ni)
+en-tr:	pay out -> (General, v.) Ã¶demek
+en-tr:	pay out -> (General, v.) acÄ±sÄ±nÄ± Ã§Ä±kartmak
+en-tr:	pay out -> (Trade/Economic, -) Ã¶demek
 en-tr:	pay out -> (Marine, -) kaloma etmek
-en-tr:	pay out of pocket -> (General, v.) cebinden ödemek
-en-tr:	pay out of pocket -> (General, v.) cepten ödemek
-en-tr:	pay out of pocket -> (General, v.) kendi cebinden ödemek
-en-tr:	you should figure out a way to pay him his money -> (Speaking, -) ona, parasýný ödemenin bir yolunu bulmalýsýn
-en-tr:	constant pay out ratio -> (Trade/Economic, -) sabit oranda kar payý daðýtýmý
-en-tr:	pay-out ratio money -> (Trade/Economic, -) pay baþýna karýn bir yüzdesi oranýnda daðýtýlan kar payý
-en-tr:	mustering-out pay -> (Military, -) terhis tahsisatý
+en-tr:	pay out of pocket -> (General, v.) cebinden Ã¶demek
+en-tr:	pay out of pocket -> (General, v.) cepten Ã¶demek
+en-tr:	pay out of pocket -> (General, v.) kendi cebinden Ã¶demek
+en-tr:	you should figure out a way to pay him his money -> (Speaking, -) ona, parasÄ±nÄ± Ã¶demenin bir yolunu bulmalÄ±sÄ±n
+en-tr:	constant pay out ratio -> (Trade/Economic, -) sabit oranda kar payÄ± daÄŸÄ±tÄ±mÄ±
+en-tr:	pay-out ratio money -> (Trade/Economic, -) pay baÅŸÄ±na karÄ±n bir yÃ¼zdesi oranÄ±nda daÄŸÄ±tÄ±lan kar payÄ±
+en-tr:	mustering-out pay -> (Military, -) terhis tahsisatÄ±
 
-tr-en:	geri götürmek -> (-, Fiil) to carry back
-tr-en:	geri geri götürmek -> (-, Fiil) to back up
-tr-en:	yabancý ülkelerdeki yatýrýmlardan elde edilen kazançlarý kendi memleketine geri götürmek -> (-, Fiil) to repatriate earnings from foreign investments
-tr-en:	sermayeyi kendi memleketine geri götürmek -> (-, Fiil) to repatriate capital
-tr-en:	otomobili geri geri götürmek -> (-, Fiil) to back a car
+tr-en:	geri gÃ¶tÃ¼rmek -> (-, Fiil) to carry back
+tr-en:	geri geri gÃ¶tÃ¼rmek -> (-, Fiil) to back up
+tr-en:	yabancÄ± Ã¼lkelerdeki yatÄ±rÄ±mlardan elde edilen kazanÃ§larÄ± kendi memleketine geri gÃ¶tÃ¼rmek -> (-, Fiil) to repatriate earnings from foreign investments
+tr-en:	sermayeyi kendi memleketine geri gÃ¶tÃ¼rmek -> (-, Fiil) to repatriate capital
+tr-en:	otomobili geri geri gÃ¶tÃ¼rmek -> (-, Fiil) to back a car
 ```
 
 *Data sources:*
