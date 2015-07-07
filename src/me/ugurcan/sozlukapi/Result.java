@@ -1,74 +1,74 @@
 package me.ugurcan.sozlukapi;
 
 public class Result {
-	
-	private String source, translation, lang2lang, type, category;
 
-	public Result(String source, String translation, String lang2lang, String type, String category){
-		
-		this.source = source;
-		this.translation = translation;
-		this.lang2lang = lang2lang;
-		if(type.equals(""))
-			this.type = "-";
-		else
-			this.type = type;
-		if(category.equals(""))
-			this.category = "-";
-		else
-			this.category = category;
-		
-	}
-	
-	// source
-	public String getSource() {
-		return source;
-	}
+    private String source, translation, lang2lang, type, category;
 
-	protected void setSource(String source) {
-		this.source = source;
-	}
+    public Result(String source, String translation, String lang2lang, String type, String category) {
 
-	// translation
-	public String getTranslation() {
-		return translation;
-	}
+        this.source = source;
+        this.translation = translation;
+        this.lang2lang = lang2lang;
+        if (type.equals(""))
+            this.type = "-";
+        else
+            this.type = type;
+        if (category.equals(""))
+            this.category = "-";
+        else
+            this.category = category;
 
-	protected void setTranslation(String translation) {
-		this.translation = translation;
-	}
-	
-	// lang2lang
-	public String getLang2lang() {
-		return lang2lang;
-	}
+    }
 
-	protected void setLang2lang(String lang2lang) {
-		this.lang2lang = lang2lang;
-	}
+    // source
+    public String getSource() {
+        return source;
+    }
 
-	// type
-	public String getType() {
-		return type;
-	}
+    protected void setSource(String source) {
+        this.source = source;
+    }
 
-	protected void setType(String type) {
-		this.type = type;
-	}
+    // translation
+    public String getTranslation() {
+        return translation;
+    }
 
-	// category
-	public String getCategory() {
-		return category;
-	}
+    protected void setTranslation(String translation) {
+        this.translation = translation;
+    }
 
-	protected void setCategory(String category) {
-		this.category = category;
-	}
-	
-	// print neatly
-	@Override
-	public String toString(){
-		return lang2lang + ":\t" + source + " -> " + "(" + category + ", " + type + ") " +  translation;
-	}
+    // lang2lang
+    public String getLang2lang() {
+        return lang2lang;
+    }
+
+    protected void setLang2lang(String lang2lang) {
+        this.lang2lang = lang2lang;
+    }
+
+    // type
+    public String getType() {
+        return type;
+    }
+
+    protected void setType(String type) {
+        this.type = type;
+    }
+
+    // category
+    public String getCategory() {
+        return category;
+    }
+
+    protected void setCategory(String category) {
+        this.category = category;
+    }
+
+    // print neatly
+    @Override
+    public String toString() {
+        return lang2lang + ":\t" + source + " -> " + "(" + category + ", " + type + ") " + translation;
+    }
 
 }

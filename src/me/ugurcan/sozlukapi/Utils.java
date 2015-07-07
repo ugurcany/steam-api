@@ -6,10 +6,10 @@ public class Utils {
 
     protected static String replaceTurkishChars(String input) {
 
-        if( input.contains("Ç") || input.contains("ç") || input.contains("Ğ") || input.contains("ğ") || input.contains("İ") ||
+        if (input.contains("Ç") || input.contains("ç") || input.contains("Ğ") || input.contains("ğ") || input.contains("İ") ||
                 input.contains("ı") || input.contains("Ö") || input.contains("ö") || input.contains("Ş") || input.contains("ş") ||
-                input.contains("Ü") || input.contains("ü") )
-            input = input.toLowerCase(new Locale("TR","tr"));
+                input.contains("Ü") || input.contains("ü"))
+            input = input.toLowerCase(new Locale("TR", "tr"));
         else
             input = input.toLowerCase(Locale.ENGLISH);
 

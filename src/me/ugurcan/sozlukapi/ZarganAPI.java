@@ -9,62 +9,62 @@ import java.util.ArrayList;
 
 public class ZarganAPI extends SozlukAPI {
 
-	public ZarganAPI(){
+    public ZarganAPI() {
 
-	}
+    }
 
-	@Override
-	public ArrayList<Result> translate(String input){
+    @Override
+    public ArrayList<Result> translate(String input) {
 
-		input = Utils.replaceTurkishChars(input);
+        input = Utils.replaceTurkishChars(input);
 
-		//System.out.println(input);
-		
-		ArrayList<Result> results = new ArrayList<Result>();
-			
-		try{
+        //System.out.println(input);
 
-			Document doc = Jsoup.connect("http://www2.zargan.com/tr/page/search?Text=" + input + "&FromLanguage=en").get();
-			Elements elements = doc.getElementsByClass("resultsRow");
-			results.addAll( translateSub(elements) );
+        ArrayList<Result> results = new ArrayList<Result>();
 
-			doc = Jsoup.connect("http://www2.zargan.com/tr/page/search?Text=" + input + "&FromLanguage=tr").get();
-			elements = doc.getElementsByClass("resultsRow");
-			results.addAll( translateSub(elements) );
-			
-		}catch(Exception ex){
-			results.clear();
-		}
-		
-		if(results.isEmpty())
-			results.add(new Result("No result found!", "-", "-", "-", "-"));
-		
-		return results;
-		
-	}
+        try {
 
-	private ArrayList<Result> translateSub(Elements elements){
+            Document doc = Jsoup.connect("http://www2.zargan.com/tr/page/search?Text=" + input + "&FromLanguage=en").get();
+            Elements elements = doc.getElementsByClass("resultsRow");
+            results.addAll(translateSub(elements));
 
-		ArrayList<Result> results = new ArrayList<Result>();
+            doc = Jsoup.connect("http://www2.zargan.com/tr/page/search?Text=" + input + "&FromLanguage=tr").get();
+            elements = doc.getElementsByClass("resultsRow");
+            results.addAll(translateSub(elements));
 
-		for(Element element : elements){
-			if(element.getElementsByClass("resultLink").isEmpty())
-				continue;
+        } catch (Exception ex) {
+            results.clear();
+        }
 
-			String sourceLang = element.select("img").get(1).attr("data-from-lang");
-			String source = element.getElementsByClass("resultLink").get(0).text();
+        if (results.isEmpty())
+            results.add(new Result("No result found!", "-", "-", "-", "-"));
 
-			String translationLang = element.select("img").get(1).attr("data-to-lang");
-			String translation = element.getElementsByClass("resultLink").get(1).text();
+        return results;
 
-			String lang2lang = sourceLang + "-" + translationLang;
-			String type = element.getElementsByClass("categoryTypeStyle").get(1).text();
-			String category = element.getElementsByClass("categoryTypeStyle").get(3).text();
+    }
 
-			results.add(new Result(source, translation, lang2lang, type, category));
-		}
+    private ArrayList<Result> translateSub(Elements elements) {
 
-		return results;
-	}
-	
+        ArrayList<Result> results = new ArrayList<Result>();
+
+        for (Element element : elements) {
+            if (element.getElementsByClass("resultLink").isEmpty())
+                continue;
+
+            String sourceLang = element.select("img").get(1).attr("data-from-lang");
+            String source = element.getElementsByClass("resultLink").get(0).text();
+
+            String translationLang = element.select("img").get(1).attr("data-to-lang");
+            String translation = element.getElementsByClass("resultLink").get(1).text();
+
+            String lang2lang = sourceLang + "-" + translationLang;
+            String type = element.getElementsByClass("categoryTypeStyle").get(1).text();
+            String category = element.getElementsByClass("categoryTypeStyle").get(3).text();
+
+            results.add(new Result(source, translation, lang2lang, type, category));
+        }
+
+        return results;
+    }
+
 }
