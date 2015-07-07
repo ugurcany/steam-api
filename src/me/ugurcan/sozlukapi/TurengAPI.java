@@ -54,5 +54,5 @@ public class TurengAPI extends SozlukAPI {
 		return results;
 		
 	}
-	
+
 }
