@@ -8,7 +8,7 @@ SozlukAPI tureng = new TurengAPI();
 SozlukAPI zargan = new ZarganAPI();
 
 // input can be in Turkish or English
-ArrayList<Result> results = tureng.translate("LIVE ON");
+ArrayList<Result> results = tureng.translate("pay out");
 
 for (Result result : results)
 	System.out.println( result );
@@ -16,7 +16,7 @@ for (Result result : results)
 System.out.println();
 
 // input can be in Turkish or English
-results = zargan.translate("ÇOLUK ÇOCUK");
+results = zargan.translate("geri götürmek");
 
 for (Result result : results)
 	System.out.println( result );
@@ -24,65 +24,27 @@ for (Result result : results)
 
 **Output:**
 ```
-en-tr:	live on -> (General, v.) geçimini sürdürmek
-en-tr:	live on -> (General, v.) yaþamýný idame ettirmek
-en-tr:	live on -> (General, v.) ile beslenmek
-en-tr:	live on -> (General, v.) ile geçinmek
-en-tr:	live on -> (General, v.) geçinmek
-en-tr:	live on a very small amount of money -> (General, v.) çok az bir parayla geçinmek
-en-tr:	live on borrowed money -> (General, v.) borç yemek
-en-tr:	live on one's nerves -> (General, v.) diken üstünde olmak
-en-tr:	live on someone else -> (General, v.) haraç yemek
-en-tr:	live on the border of -> (General, v.) 'nýn sýnýrýnda yaþamak
-en-tr:	live on the edge -> (General, v.) uçlarda yaþamak
-en-tr:	live on the edge -> (General, v.) hayatý uçlarda yaþamak
-en-tr:	live on the margins of society -> (General, v.) toplumun sýnýrlarýnda/kýyýsýnda yaþamak
-en-tr:	live on the razor's edge -> (General, v.) ölümle kalým arasýnda olmak
-en-tr:	live on the razor's edge -> (General, v.) iki ateþ arasýnda kalmak
-en-tr:	live high on the hog -> (Colloquial, -) para içinde yüzmek
-en-tr:	live high on the hog -> (Colloquial, -) lüks içinde yaþamak
-en-tr:	live on one's own -> (Colloquial, -) tek baþýna yaþamak
-en-tr:	live high on the hog -> (Idioms, -) þatafatlý bir hayat sürmek
-en-tr:	live high on the hog -> (Idioms, -) çok rahat bir yaþam sürmek
-en-tr:	live high on the hog -> (Idioms, -) çok zengin olmak
-en-tr:	live high on the hog -> (Idioms, -) bir eli yaðda bir eli balda olmak
-en-tr:	live high on the hog -> (Idioms, -) para içinde yüzmek
-en-tr:	live high on the hog -> (Idioms, -) har vurup harman savurmak
-en-tr:	live on a borrowed time -> (Idioms, -) günleri sayýlý olmak
-en-tr:	live on an amount of money -> (Idioms, -) belli bir parayla hayatýný idame ettirmek
-en-tr:	live on an amount of money -> (Idioms, -) belirli miktar parayla yaþamak
-en-tr:	live on borrowed time -> (Idioms, -) az zamaný kalmýþ olmak
-en-tr:	live on borrowed time -> (Idioms, -) bir gözü topraða bakmak
-en-tr:	live on borrowed time -> (Idioms, -) ölmekte olmak
-en-tr:	live on borrowed time -> (Idioms, -) sayýlý günleri kalmak
-en-tr:	live on borrowed time -> (Idioms, -) bir ayaðý mezarda olmak
-en-tr:	live on borrowed time -> (Idioms, -) cabadan yaþamak
-en-tr:	live on one's nerves -> (Idioms, -) heyecanlý bir karaktere sahip olmak
-en-tr:	live on one's own -> (Idioms, -) (genelde ekonomik özgürlüðünü kazanýp) kendi baþýna yaþamak
-en-tr:	live on one's wits -> (Idioms, -) zekasý sayesinde yaþamýný sürdürmek
-en-tr:	live on the breadline -> (Idioms, -) aþýrý yoksul olmak
-en-tr:	live on the breadline -> (Idioms, -) açlýk sýnýrýnda yaþamak
-en-tr:	live on the edge -> (Idioms, -) tehlikeli yaþamak
-en-tr:	live on the fat of the land -> (Idioms, -) yediði önünde yemediði arkasýnda olmak
-en-tr:	live on the fat of the land -> (Idioms, -) tuzu kuru olmak
-en-tr:	live on the fat of the land -> (Idioms, -) çok iyi durumda olmak
-en-tr:	live on the fat of the land -> (Idioms, -) her þeyin en iyisi ile geçinmek
-en-tr:	live on the fat of the land -> (Idioms, -) bolluk bereket içinde yaþamak
-en-tr:	live on the fat of the land -> (Idioms, -) rahat bir yaþam sürmek
-en-tr:	which/what floor do you live on? -> (Speaking, -) evin kaçýncý katta?
-en-tr:	which/what floor do you live on? -> (Speaking, -) kaçýncý katta oturuyorsunuz?
-en-tr:	which/what floor do you live on? -> (Speaking, -) kaçýncý katta yaþýyorsunuz?
-en-tr:	which/what floor do you live on? -> (Speaking, -) kaçýncý katta oturuyorsun?
-en-tr:	which/what floor do you live on? -> (Speaking, -) kaçýncý katta yaþýyorsun?
-en-tr:	which/what floor do you live on? -> (Speaking, -) eviniz kaçýncý katta?
-en-tr:	live on something -> (Aeronautic, -) ile yaþamak
-en-tr:	live on something -> (Aeronautic, -) ile geçinmek
-en-tr:	live on something -> (Aeronautic, -) ile beslenmek
+en-tr:	pay out -> (General, v.) acýsýný çýkarmak
+en-tr:	pay out -> (General, v.) ödemek (parayý)
+en-tr:	pay out -> (General, v.) harcamak
+en-tr:	pay out -> (General, v.) gevþetmek (ip/zincir vb'ni)
+en-tr:	pay out -> (General, v.) ödemek
+en-tr:	pay out -> (General, v.) acýsýný çýkartmak
+en-tr:	pay out -> (Trade/Economic, -) ödemek
+en-tr:	pay out -> (Marine, -) kaloma etmek
+en-tr:	pay out of pocket -> (General, v.) cebinden ödemek
+en-tr:	pay out of pocket -> (General, v.) cepten ödemek
+en-tr:	pay out of pocket -> (General, v.) kendi cebinden ödemek
+en-tr:	you should figure out a way to pay him his money -> (Speaking, -) ona, parasýný ödemenin bir yolunu bulmalýsýn
+en-tr:	constant pay out ratio -> (Trade/Economic, -) sabit oranda kar payý daðýtýmý
+en-tr:	pay-out ratio money -> (Trade/Economic, -) pay baþýna karýn bir yüzdesi oranýnda daðýtýlan kar payý
+en-tr:	mustering-out pay -> (Military, -) terhis tahsisatý
 
-tr-en:	çoluk çocuk -> (-, -) household
-tr-en:	çoluk çocuk -> (-, -) home- folks
-tr-en:	çoluk çocuk -> (-, -) family
-tr-en:	çoluk çocuk -> (-, -) descent
+tr-en:	geri götürmek -> (-, Fiil) to carry back
+tr-en:	geri geri götürmek -> (-, Fiil) to back up
+tr-en:	yabancý ülkelerdeki yatýrýmlardan elde edilen kazançlarý kendi memleketine geri götürmek -> (-, Fiil) to repatriate earnings from foreign investments
+tr-en:	sermayeyi kendi memleketine geri götürmek -> (-, Fiil) to repatriate capital
+tr-en:	otomobili geri geri götürmek -> (-, Fiil) to back a car
 ```
 
 *Data sources:*
