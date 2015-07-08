@@ -68,7 +68,14 @@ public class Result {
     // print neatly
     @Override
     public String toString() {
-        return lang2lang + ":\t" + source + " -> " + "(" + category + ", " + partOfSpeech + ") " + translation;
+        if (category.equals("-") && partOfSpeech.equals("-"))
+            return lang2lang + ":\t" + source + " -> " + translation;
+        if (category.equals("-"))
+            return lang2lang + ":\t" + source + " -> " + "(" + partOfSpeech + ") " + translation;
+        else if (partOfSpeech.equals("-"))
+            return lang2lang + ":\t" + source + " -> " + "(" + category + ") " + translation;
+        else
+            return lang2lang + ":\t" + source + " -> " + "(" + category + ", " + partOfSpeech + ") " + translation;
     }
 
 }

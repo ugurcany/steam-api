@@ -36,9 +36,6 @@ public class ZarganAPI extends DictionaryAPI {
             results.clear();
         }
 
-        if (results.isEmpty())
-            results.add(new Result("No result found!", "-", "-", "-", "-"));
-
         return results;
 
     }
@@ -65,6 +62,7 @@ public class ZarganAPI extends DictionaryAPI {
         }
 
         return results;
+
     }
 
 }

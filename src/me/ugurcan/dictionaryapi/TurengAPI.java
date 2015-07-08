@@ -48,9 +48,6 @@ public class TurengAPI extends DictionaryAPI {
             results.clear();
         }
 
-        if (results.isEmpty())
-            results.add(new Result("No result found!", "-", "-", "-", "-"));
-
         return results;
 
     }
