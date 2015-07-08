@@ -2,9 +2,9 @@
 
 Java API for bidirectional Turkish <-> English dictionary
 
-*en-tr* and *tr-en* translations are retrieved from [*Tureng*](http://tureng.com/) and [*Zargan*](http://www2.zargan.com/).
+`en-tr` and `tr-en` translations are retrieved from [*Tureng*](http://tureng.com/) and [*Zargan*](http://www2.zargan.com/).
 
-*en-en* definitions are retrieved from [*Babylon*](http://www.babylon.com/).
+`en-en` definitions are retrieved from [*Babylon*](http://www.babylon.com/).
 
 **How to use:**
 ```java
