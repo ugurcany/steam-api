@@ -1,6 +1,6 @@
 ## DictionaryAPI
 
-Java API for bidirectional Turkish <-> English dictionary
+Java API for bidirectional Turkish <-> English and English -> English dictionary
 
 *Data sources:*
 
