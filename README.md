@@ -1,4 +1,4 @@
-## SozlukAPI
+## DictionaryAPI
 
 Turkish <-> English Dictionary API. Translations are retrieved from the websites *Tureng* and *Zargan*.
 

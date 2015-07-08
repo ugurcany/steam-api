@@ -1,4 +1,4 @@
-package me.ugurcan.sozlukapi;
+package me.ugurcan.dictionaryapi;
 
 import java.util.Locale;
 

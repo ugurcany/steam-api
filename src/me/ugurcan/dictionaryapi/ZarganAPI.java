@@ -1,4 +1,4 @@
-package me.ugurcan.sozlukapi;
+package me.ugurcan.dictionaryapi;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -7,7 +7,7 @@ import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 
-public class ZarganAPI extends SozlukAPI {
+public class ZarganAPI extends DictionaryAPI {
 
     public ZarganAPI() {
 

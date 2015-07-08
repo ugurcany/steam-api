@@ -2,17 +2,17 @@ package me.ugurcan.test;
 
 import java.util.ArrayList;
 
-import me.ugurcan.sozlukapi.Result;
-import me.ugurcan.sozlukapi.SozlukAPI;
-import me.ugurcan.sozlukapi.TurengAPI;
-import me.ugurcan.sozlukapi.ZarganAPI;
+import me.ugurcan.dictionaryapi.DictionaryAPI;
+import me.ugurcan.dictionaryapi.Result;
+import me.ugurcan.dictionaryapi.TurengAPI;
+import me.ugurcan.dictionaryapi.ZarganAPI;
 
 public class Test {
 
     public static void main(String[] args) {
 
-        SozlukAPI tureng = new TurengAPI();
-        SozlukAPI zargan = new ZarganAPI();
+        DictionaryAPI tureng = new TurengAPI();
+        DictionaryAPI zargan = new ZarganAPI();
 
         // input can be in Turkish or English
         ArrayList<Result> results = tureng.translate("pay out");
