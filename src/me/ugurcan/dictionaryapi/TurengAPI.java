@@ -5,8 +5,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.ArrayList;
-
 public class TurengAPI extends DictionaryAPI {
 
     public TurengAPI() {
@@ -14,13 +12,13 @@ public class TurengAPI extends DictionaryAPI {
     }
 
     @Override
-    public ArrayList<Result> translate(String input) {
+    public Results translate(String input) {
 
         input = Utils.replaceTurkishChars(input);
 
         //System.out.println(input);
 
-        ArrayList<Result> results = new ArrayList<Result>();
+        Results results = new Results();
 
         try {
 

@@ -5,8 +5,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.ArrayList;
-
 public class ZarganAPI extends DictionaryAPI {
 
     public ZarganAPI() {
@@ -14,13 +12,13 @@ public class ZarganAPI extends DictionaryAPI {
     }
 
     @Override
-    public ArrayList<Result> translate(String input) {
+    public Results translate(String input) {
 
         input = Utils.replaceTurkishChars(input);
 
         //System.out.println(input);
 
-        ArrayList<Result> results = new ArrayList<Result>();
+        Results results = new Results();
 
         try {
 
@@ -43,9 +41,9 @@ public class ZarganAPI extends DictionaryAPI {
 
     }
 
-    private ArrayList<Result> translateSub(Elements elements) {
+    private Results translateSub(Elements elements) {
 
-        ArrayList<Result> results = new ArrayList<Result>();
+        Results results = new Results();
 
         for (Element element : elements) {
             if (element.getElementsByClass("resultLink").isEmpty())
