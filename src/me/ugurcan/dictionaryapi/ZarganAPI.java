@@ -7,6 +7,8 @@ import org.jsoup.select.Elements;
 
 public class ZarganAPI extends DictionaryAPI {
 
+    private static final String apiName = "Zargan";
+
     public ZarganAPI() {
 
     }
@@ -18,7 +20,7 @@ public class ZarganAPI extends DictionaryAPI {
 
         //System.out.println(input);
 
-        Results results = new Results();
+        Results results = new Results(apiName);
 
         try {
 
@@ -43,7 +45,7 @@ public class ZarganAPI extends DictionaryAPI {
 
     private Results translateSub(Elements elements) {
 
-        Results results = new Results();
+        Results results = new Results(apiName);
 
         for (Element element : elements) {
             if (element.getElementsByClass("resultLink").isEmpty())

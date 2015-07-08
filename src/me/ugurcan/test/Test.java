@@ -16,8 +16,6 @@ public class Test {
         Results results = tureng.translate("pay out");
         results.print();
 
-        System.out.println();
-
         // input can be in Turkish or English
         results = zargan.translate("geri götürmek");
         results.print();

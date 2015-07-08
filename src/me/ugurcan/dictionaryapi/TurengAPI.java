@@ -7,6 +7,8 @@ import org.jsoup.select.Elements;
 
 public class TurengAPI extends DictionaryAPI {
 
+    private static final String apiName = "Tureng";
+
     public TurengAPI() {
 
     }
@@ -18,7 +20,7 @@ public class TurengAPI extends DictionaryAPI {
 
         //System.out.println(input);
 
-        Results results = new Results();
+        Results results = new Results(apiName);
 
         try {
 
