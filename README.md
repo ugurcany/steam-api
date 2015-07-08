@@ -1,6 +1,6 @@
 ## DictionaryAPI
 
-Java API for the bidirectional Turkish <-> English dictionary
+Java API for bidirectional Turkish <-> English dictionary
 
 Translations are retrieved from the websites *Tureng* and *Zargan*.
 
