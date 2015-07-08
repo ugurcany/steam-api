@@ -38,10 +38,10 @@ public class TurengAPI extends DictionaryAPI {
                 String translation = element.select("td").get(4).select("a").text();
 
                 String lang2lang = sourceLang + "-" + translationLang;
-                String type = element.select("i").text();
+                String partOfSpeech = element.select("i").text();
                 String category = element.select("td").get(1).text();
 
-                results.add(new Result(source, translation, lang2lang, type, category));
+                results.add(new Result(source, translation, lang2lang, partOfSpeech, category));
             }
 
         } catch (Exception ex) {

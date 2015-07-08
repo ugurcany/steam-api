@@ -58,10 +58,10 @@ public class ZarganAPI extends DictionaryAPI {
             String translation = element.getElementsByClass("resultLink").get(1).text();
 
             String lang2lang = sourceLang + "-" + translationLang;
-            String type = element.getElementsByClass("categoryTypeStyle").get(1).text();
+            String partOfSpeech = element.getElementsByClass("categoryTypeStyle").get(1).text();
             String category = element.getElementsByClass("categoryTypeStyle").get(3).text();
 
-            results.add(new Result(source, translation, lang2lang, type, category));
+            results.add(new Result(source, translation, lang2lang, partOfSpeech, category));
         }
 
         return results;

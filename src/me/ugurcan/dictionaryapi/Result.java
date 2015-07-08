@@ -2,17 +2,17 @@ package me.ugurcan.dictionaryapi;
 
 public class Result {
 
-    private String source, translation, lang2lang, type, category;
+    private String source, translation, lang2lang, partOfSpeech, category;
 
-    public Result(String source, String translation, String lang2lang, String type, String category) {
+    public Result(String source, String translation, String lang2lang, String partOfSpeech, String category) {
 
         this.source = source;
         this.translation = translation;
         this.lang2lang = lang2lang;
-        if (type.equals(""))
-            this.type = "-";
+        if (partOfSpeech.equals(""))
+            this.partOfSpeech = "-";
         else
-            this.type = type;
+            this.partOfSpeech = partOfSpeech;
         if (category.equals(""))
             this.category = "-";
         else
@@ -47,13 +47,13 @@ public class Result {
         this.lang2lang = lang2lang;
     }
 
-    // type
-    public String getType() {
-        return type;
+    // partOfSpeech
+    public String getPartOfSpeech() {
+        return partOfSpeech;
     }
 
-    protected void setType(String type) {
-        this.type = type;
+    protected void setPartOfSpeech(String partOfSpeech) {
+        this.partOfSpeech = partOfSpeech;
     }
 
     // category
@@ -68,7 +68,7 @@ public class Result {
     // print neatly
     @Override
     public String toString() {
-        return lang2lang + ":\t" + source + " -> " + "(" + category + ", " + type + ") " + translation;
+        return lang2lang + ":\t" + source + " -> " + "(" + category + ", " + partOfSpeech + ") " + translation;
     }
 
 }
