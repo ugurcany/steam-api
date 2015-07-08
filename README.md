@@ -2,9 +2,9 @@
 
 Java API for bidirectional Turkish <-> English dictionary
 
-*en-tr* and *tr-en* translations are retrieved from the websites *Tureng* and *Zargan*.
+*en-tr* and *tr-en* translations are retrieved from the websites [*Tureng*](http://tureng.com/) and [*Zargan*](http://www2.zargan.com/).
 
-*en-en* definitions are retrieved from the website *Babylon*.
+*en-en* definitions are retrieved from [*Babylon*](http://www.babylon.com/).
 
 **How to use:**
 ```java
@@ -51,8 +51,3 @@ en-en:	Get on -> embark; enter a bus or train or plane (e.g. "She got on the bus
 en-en:	Get on -> proceed, advance; succeed, manage well; agree with
 =============Babylon=============
 ```
-
-*Data sources:*
-* *http://tureng.com/*
-* *http://www2.zargan.com/*
-* *http://www.babylon.com/*
