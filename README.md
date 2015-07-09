@@ -3,7 +3,7 @@
 Java API for Turkish <-> English, English -> English, and Turkish -> Turkish dictionary
 
 * `en-tr` and `tr-en` translations are retrieved from [*Tureng*](http://tureng.com/) and [*Zargan*](http://www2.zargan.com/).
-* `en-en` definitions are retrieved from [*Babylon*](http://www.babylon.com/).
+* `en-en` definitions are retrieved from [*Sozluk.Net*](http://www.sozluk.net/) and [*Babylon*](http://www.babylon.com/).
 * `tr-tr` definitions are retrieved from [*Sozluk.Net*](http://www.sozluk.net/).
 
 **How to use:**
