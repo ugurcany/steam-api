@@ -2,7 +2,6 @@ package me.ugurcan.dictionaryapi;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class SozlukNetAPI extends MonolingualDictAPI {
@@ -43,7 +42,7 @@ public class SozlukNetAPI extends MonolingualDictAPI {
                 String[] translations = elements.get(i + 1).text().split("\\*");
                 String partOfSpeech = elements.get(i + 2).text();
 
-                if(partOfSpeech.equals("\u00a0")) // &nbsp; => empty
+                if (partOfSpeech.equals("\u00a0")) // &nbsp; => empty
                     partOfSpeech = "";
 
                 for (String translation : translations)
