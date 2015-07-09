@@ -20,7 +20,7 @@ public class SteamAPI {
 
         Games games = new Games();
 
-        if(upperLimit <= 0)
+        if (upperLimit <= 0)
             return games;
 
         try {
@@ -90,12 +90,12 @@ public class SteamAPI {
                     ///////////////////////
                     stillFound = true;
                     count++;
-                    if(count == upperLimit)
+                    if (count == upperLimit)
                         break;
                     ///////////////////////
                 }
 
-                if(count == upperLimit)
+                if (count == upperLimit)
                     break;
             }
 

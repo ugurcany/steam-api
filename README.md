@@ -5,8 +5,11 @@ Java API for [*Steam*](http://store.steampowered.com/), the online gaming platfo
 **How to use:**
 ```java
 SteamAPI steam = new SteamAPI();
-Games games = steam.searchGame("company of heroes", 5);
-// inputs are "game title" and "upper limit for the number of search results"
+
+String gameTitle = "company of heroes";
+int upperLimit = 5; // upper limit for the number of search results
+Games games = steam.searchGame(gameTitle, upperLimit);
+
 games.printAll();
 ```
 
