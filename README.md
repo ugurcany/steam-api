@@ -1,6 +1,6 @@
 ## SteamAPI - {under development}
 
-Java API for the online game platform [*Steam*](http://store.steampowered.com/)
+Java API for [*Steam*](http://store.steampowered.com/), the online gaming platform
 
 **How to use:**
 ```java
