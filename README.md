@@ -15,17 +15,17 @@ results.print();
 
 BilingualDictAPI zargan = new ZarganAPI();
 // input can be in Turkish or English
-results = zargan.translate("geri götürmek");
+results = zargan.translate("süpürmek");
+results.print();
+
+MonolingualDictAPI sozlukNet = new SozlukNetAPI();
+// input can be in Turkish or English
+results = sozlukNet.getDefinitionOf("pay");
 results.print();
 
 MonolingualDictAPI babylon = new BabylonAPI();
 // input can only be in English
 results = babylon.getDefinitionOf("get on");
-results.print();
-
-MonolingualDictAPI sozlukNet = new SozlukNetAPI();
-// input can only be in Turkish
-results = sozlukNet.getDefinitionOf("süzmek");
 results.print();
 ```
 
@@ -45,12 +45,30 @@ en-tr:	spit (out) one's dummy -> (British Slang) kendinden geçmek
 en-tr:	spit (out) one's dummy -> (British Slang) kriz geçirmek
 =============Tureng=============
 =============Zargan=============
-tr-en:	geri götürmek -> (Fiil) to carry back
-tr-en:	geri geri götürmek -> (Fiil) to back up
-tr-en:	yabancı ülkelerdeki yatırımlardan elde edilen kazançları kendi memleketine geri götürmek -> (Fiil) to repatriate earnings from foreign investments
-tr-en:	sermayeyi kendi memleketine geri götürmek -> (Fiil) to repatriate capital
-tr-en:	otomobili geri geri götürmek -> (Fiil) to back a car
+tr-en:	süpürmek -> (Fiil) to sweep
+tr-en:	süpürmek -> (Fiil) to brush
+tr-en:	hafif hafif süpürmek -> (Fiil) to whisk
+tr-en:	yukarıdan aşağıya doğru süpürmek -> (Fiil) to sweep down
+tr-en:	silip süpürmek -> (Fiil) to sweep
+tr-en:	bütün işleri süpürmek -> (Fiil) to make a clean sweep of it
+tr-en:	silip süpürmek -> (Fiil) to mop up profits
+tr-en:	silip süpürmek -> (Fiil) to mop up
 =============Zargan=============
+=============SozlukNet=============
+en-en:	Pay -> (v. t.) To cover, as bottom of a vessel, a seam, a spar, etc., with tar or pitch, or waterproof composition of tallow, resin, etc.; to smear.
+en-en:	Pay -> (v. t.) To satisfy, or content; specifically, to satisfy (another person) for service rendered, property delivered, etc.; to discharge one's obligation to; to make due return to; to compensate; to remunerate; to recompense; to requite; as, to pay workmen or servants.
+en-en:	Pay -> (v. t.) Hence, figuratively: To compensate justly; to requite according to merit; to reward; to punish; to retort or retaliate upon.
+en-en:	Pay -> (v. t.) To discharge, as a debt, demand, or obligation, by giving or doing what is due or required; to deliver the amount or value of to the person to whom it is owing; to discharge a debt by delivering (money owed).
+en-en:	Pay -> (v. t.) To discharge or fulfill, as a duy; to perform or render duty, as that which has been promised.
+en-en:	Pay -> (v. t.) To give or offer, without an implied obligation; as, to pay attention; to pay a visit.
+en-en:	Pay -> (v. i.) To give a recompense; to make payment, requital, or satisfaction; to discharge a debt.
+en-en:	Pay -> (v. i.) Hence, to make or secure suitable return for expense or trouble; to be remunerative or profitable; to be worth the effort or pains required; as, it will pay to ride; it will pay to wait; politeness always pays.
+en-en:	Pay -> (n.) Satisfaction; content.
+en-en:	Pay -> (n.) An equivalent or return for money due, goods purchased, or services performed; salary or wages for work or service; compensation; recompense; payment; hire; as, the pay of a clerk; the pay of a soldier.
+tr-tr:	pay -> Birden fazla kişi arasinda bölüşülmüş bir bütünden, bu kişilerin her birine düşen bölüm, hisse
+tr-tr:	pay -> Eşit bölüm
+tr-tr:	pay -> Bayagi kesirlerden birinin eşit parçalardan kaç tane alindigini gösteren sayi: paydanin üstüne yazilarak yatik bir çizgi ile ondan ayrılır
+=============SozlukNet=============
 =============Babylon=============
 en-en:	Get on -> embark
 en-en:	Get on -> enter a bus or train or plane (e.g. "She got on the bus about 40 minutes ago")
@@ -58,10 +76,4 @@ en-en:	Get on -> proceed, advance
 en-en:	Get on -> succeed, manage well
 en-en:	Get on -> agree with
 =============Babylon=============
-=============SozlukNet=============
-tr-tr:	süzmek -> Bir siviyi, içindeki kati maddelerden ayirmak için bez veya delikli bir kaptan geçirmek
-tr-tr:	süzmek -> Bazi sivilarin yogunlaşmasina yol açan, kati ve tortulu maddeleri bu sivilardan ayirmak
-tr-tr:	süzmek -> Gözle, inceleyerek, dikkatle bakmak
-tr-tr:	süzmek -> (göz için) baygın ve anlamlı bakmak
-=============SozlukNet=============
 ```

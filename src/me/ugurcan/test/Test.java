@@ -19,17 +19,17 @@ public class Test {
 
         BilingualDictAPI zargan = new ZarganAPI();
         // input can be in Turkish or English
-        results = zargan.translate("geri götürmek");
+        results = zargan.translate("süpürmek");
+        results.print();
+
+        MonolingualDictAPI sozlukNet = new SozlukNetAPI();
+        // input can be in Turkish or English
+        results = sozlukNet.getDefinitionOf("pay");
         results.print();
 
         MonolingualDictAPI babylon = new BabylonAPI();
         // input can only be in English
         results = babylon.getDefinitionOf("get on");
-        results.print();
-
-        MonolingualDictAPI sozlukNet = new SozlukNetAPI();
-        // input can only be in Turkish
-        results = sozlukNet.getDefinitionOf("süzmek");
         results.print();
 
     }
