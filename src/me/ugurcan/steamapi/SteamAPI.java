@@ -5,11 +5,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class SteamAPI {
-
-    //private static final String apiName = "Tureng";
 
     public SteamAPI() {
 
@@ -27,34 +26,34 @@ public class SteamAPI {
             boolean stillFound = true;
 
             while (stillFound) {
-
+                ///////////////////////
                 stillFound = false;
                 page++;
-                ///////////////////////
-                if(page == 2)
+                if (page == 2)
                     break;
                 ///////////////////////
 
                 Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + input + "&sort_by=_ASC&page=" + page).get();
                 Elements elements = doc.getElementsByAttributeValue("id", "search_result_container").select("a");
 
-                //System.out.println(elements);
-
                 for (Element element : elements) {
                     String id = element.attr("data-ds-appid").trim();
-                    if(id.equals(""))
+                    if (id.equals(""))
                         continue;
 
+                    //title
                     String title = element.getElementsByClass("title").text().trim();
 
+                    //discount
                     String discount = element.getElementsByClass("search_discount").text().trim();
 
-                    String price = "";
-                    String discountedPrice = "";
-                    if (discount.equals("")){
+                    //price & discounted price
+                    String price;
+                    String discountedPrice;
+                    if (discount.equals("")) {
                         price = element.getElementsByClass("search_price").text().trim();
-                    }
-                    else{
+                        discountedPrice = "";
+                    } else {
                         Elements priceElm = element.getElementsByClass("search_price");
 
                         int startIndex = priceElm.toString().indexOf("<br>") + 4;
@@ -64,15 +63,32 @@ public class SteamAPI {
                         discountedPrice = priceElm.toString().substring(startIndex, endIndex).trim();
                     }
 
+                    //platforms
+                    ArrayList<String> platforms = new ArrayList<String>();
+                    Elements platformElms = element.select("p").select("span");
+                    for (Element platformElm : platformElms) {
+                        String platform = platformElm.attr("class").split(" ")[1].trim();
+                        platforms.add(platform);
+                    }
+
+                    //review summary
                     String reviewSummary = element.getElementsByClass("search_review_summary").attr("data-store-tooltip").trim();
-                    if (!reviewSummary.equals("")){
+                    if (!reviewSummary.equals("")) {
                         String[] reviewSummaryArray = reviewSummary.split("<br>");
                         reviewSummary = reviewSummaryArray[0] + " (" + reviewSummaryArray[1] + ")";
                     }
 
-                    games.add(new Game(id, title, price, discount, discountedPrice, reviewSummary));
+                    //added on
+                    String addedOn = element.getElementsByClass("search_released").text().trim();
 
+                    //image url
+                    String imageURL = element.select("img").attr("src").trim();
+
+                    games.add(new Game(id, title, price, discount, discountedPrice, reviewSummary, platforms, addedOn, imageURL));
+
+                    ///////////////////////
                     stillFound = true;
+                    ///////////////////////
                 }
 
             }

@@ -1,5 +1,7 @@
 package me.ugurcan.steamapi;
 
+import java.util.ArrayList;
+
 public class Game {
 
     private String id;
@@ -8,27 +10,43 @@ public class Game {
     private String discount;
     private String discountedPrice;
     private String reviewSummary;
+    private ArrayList<String> platforms;
+    private String addedOn;
+    private String imageURL;
 
-    public Game(String id, String title, String price, String discount, String discountedPrice, String reviewSummary) {
+    public Game(String id, String title, String price, String discount, String discountedPrice, String reviewSummary, ArrayList<String> platforms, String addedOn, String imageURL) {
 
         this.id = id;
         this.title = title;
-        if(price.equals(""))
+
+        if (price.equals(""))
             this.price = "?";
         else
             this.price = price;
-        if(discount.equals(""))
+        if (discount.equals(""))
             this.discount = "?";
         else
             this.discount = discount;
-        if(discountedPrice.equals(""))
+        if (discountedPrice.equals(""))
             this.discountedPrice = "?";
         else
             this.discountedPrice = discountedPrice;
-        if(reviewSummary.equals(""))
+        if (reviewSummary.equals(""))
             this.reviewSummary = "?";
         else
             this.reviewSummary = reviewSummary;
+
+        this.platforms = platforms;
+
+        if (addedOn.equals(""))
+            this.addedOn = "?";
+        else
+            this.addedOn = addedOn;
+
+        if (imageURL.equals(""))
+            this.imageURL = "?";
+        else
+            this.imageURL = imageURL;
 
     }
 
@@ -86,6 +104,33 @@ public class Game {
         this.reviewSummary = reviewSummary;
     }
 
+    // platforms
+    public ArrayList<String> getPlatforms() {
+        return platforms;
+    }
+
+    protected void setPlatforms(ArrayList<String> platforms) {
+        this.platforms = platforms;
+    }
+
+    // added on
+    public String getAddedOn() {
+        return addedOn;
+    }
+
+    protected void setAddedOn(String addedOn) {
+        this.addedOn = addedOn;
+    }
+
+    // image url
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    protected void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
     // print neatly
     @Override
     public String toString() {
@@ -93,14 +138,23 @@ public class Game {
 
         printOut += "title: " + title + "\n";
 
-        if(!price.equals("?"))
+        if (!price.equals("?"))
             printOut += "price: " + price + "\n";
 
-        if(!discount.equals("?"))
+        if (!discount.equals("?"))
             printOut += "discounted price: " + discountedPrice + " (" + discount + ")" + "\n";
 
-        if(!reviewSummary.equals("?"))
+        if (!platforms.isEmpty())
+            printOut += "platforms: " + platforms + "\n";
+
+        if (!reviewSummary.equals("?"))
             printOut += "review summary: " + reviewSummary + "\n";
+
+        if (!addedOn.equals("?"))
+            printOut += "added on: " + addedOn + "\n";
+
+        if (!imageURL.equals("?"))
+            printOut += "image url: " + imageURL + "\n";
 
         printOut += "=============<" + id + ">=============";
         return printOut;
