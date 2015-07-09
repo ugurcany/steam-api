@@ -5,7 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class TurengAPI extends DictionaryAPI {
+public class TurengAPI extends BilingualDictAPI {
 
     private static final String apiName = "Tureng";
 

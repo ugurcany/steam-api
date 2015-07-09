@@ -1,25 +1,31 @@
 ## DictionaryAPI
 
-Java API for bidirectional Turkish <-> English and English -> English dictionary
+Java API for Turkish <-> English, English -> English, and Turkish -> Turkish dictionary
 
 * `en-tr` and `tr-en` translations are retrieved from [*Tureng*](http://tureng.com/) and [*Zargan*](http://www2.zargan.com/).
 * `en-en` definitions are retrieved from [*Babylon*](http://www.babylon.com/).
+* `tr-tr` definitions are retrieved from [*Sozluk.Net*](http://www.sozluk.net/).
 
 **How to use:**
 ```java
-DictionaryAPI tureng = new TurengAPI();
+BilingualDictAPI tureng = new TurengAPI();
 // input can be in Turkish or English
 Results results = tureng.translate("spit out");
 results.print();
 
-DictionaryAPI zargan = new ZarganAPI();
+BilingualDictAPI zargan = new ZarganAPI();
 // input can be in Turkish or English
 results = zargan.translate("geri götürmek");
 results.print();
 
-BabylonAPI babylon = new BabylonAPI();
+MonolingualDictAPI babylon = new BabylonAPI();
 // input can only be in English
 results = babylon.getDefinitionOf("get on");
+results.print();
+
+MonolingualDictAPI sozlukNet = new SozlukNetAPI();
+// input can only be in Turkish
+results = sozlukNet.getDefinitionOf("süzmek");
 results.print();
 ```
 
@@ -46,7 +52,16 @@ tr-en:	sermayeyi kendi memleketine geri götürmek -> (Fiil) to repatriate capit
 tr-en:	otomobili geri geri götürmek -> (Fiil) to back a car
 =============Zargan=============
 =============Babylon=============
-en-en:	Get on -> embark; enter a bus or train or plane (e.g. "She got on the bus about 40 minutes ago")
-en-en:	Get on -> proceed, advance; succeed, manage well; agree with
+en-en:	Get on -> embark
+en-en:	Get on -> enter a bus or train or plane (e.g. "She got on the bus about 40 minutes ago")
+en-en:	Get on -> proceed, advance
+en-en:	Get on -> succeed, manage well
+en-en:	Get on -> agree with
 =============Babylon=============
+=============SozlukNet=============
+tr-tr:	süzmek -> Bir siviyi, içindeki kati maddelerden ayirmak için bez veya delikli bir kaptan geçirmek
+tr-tr:	süzmek -> Bazi sivilarin yogunlaşmasina yol açan, kati ve tortulu maddeleri bu sivilardan ayirmak
+tr-tr:	süzmek -> Gözle, inceleyerek, dikkatle bakmak
+tr-tr:	süzmek -> (göz için) baygın ve anlamlı bakmak
+=============SozlukNet=============
 ```

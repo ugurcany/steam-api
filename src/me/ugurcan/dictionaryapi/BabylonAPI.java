@@ -5,7 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class BabylonAPI {
+public class BabylonAPI extends MonolingualDictAPI {
 
     private static final String apiName = "Babylon";
 
@@ -29,9 +29,10 @@ public class BabylonAPI {
             String source = doc.getElementsByClass("def_main_title").get(0).text().substring(14);
 
             for (Element element : elements) {
-                String translation = element.text();
+                String[] translations = element.text().split("\\;");
 
-                results.add(new Result(source, translation, "en-en", "", ""));
+                for (String translation : translations)
+                    results.add(new Result(source, translation.trim(), "en-en", "", ""));
             }
 
         } catch (Exception ex) {
