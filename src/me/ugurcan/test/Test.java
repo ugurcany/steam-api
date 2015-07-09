@@ -8,7 +8,8 @@ public class Test {
     public static void main(String[] args) {
 
         SteamAPI steam = new SteamAPI();
-        Games games = steam.searchGame("company of heroes");
+        Games games = steam.searchGame("company of heroes", 5);
+        // inputs are "game title" and "upper limit for the number of search results"
         games.printAll();
 
     }

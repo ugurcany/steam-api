@@ -14,14 +14,18 @@ public class SteamAPI {
 
     }
 
-    public Games searchGame(String input) {
+    public Games searchGame(String gameTitle, int upperLimit) {
 
-        input = input.toLowerCase(Locale.ENGLISH);
+        gameTitle = gameTitle.toLowerCase(Locale.ENGLISH);
 
         Games games = new Games();
 
+        if(upperLimit <= 0)
+            return games;
+
         try {
 
+            int count = 0;
             int page = 0;
             boolean stillFound = true;
 
@@ -29,11 +33,9 @@ public class SteamAPI {
                 ///////////////////////
                 stillFound = false;
                 page++;
-                if (page == 2)
-                    break;
                 ///////////////////////
 
-                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + input + "&sort_by=_ASC&page=" + page).get();
+                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + gameTitle + "&sort_by=_ASC&page=" + page).get();
                 Elements elements = doc.getElementsByAttributeValue("id", "search_result_container").select("a");
 
                 for (Element element : elements) {
@@ -85,12 +87,16 @@ public class SteamAPI {
                     String imageURL = element.select("img").attr("src").trim();
 
                     games.add(new Game(id, title, price, discount, discountedPrice, reviewSummary, platforms, addedOn, imageURL));
-
                     ///////////////////////
                     stillFound = true;
+                    count++;
+                    if(count == upperLimit)
+                        break;
                     ///////////////////////
                 }
 
+                if(count == upperLimit)
+                    break;
             }
 
         } catch (Exception ex) {
