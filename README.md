@@ -1,79 +1,137 @@
-## DictionaryAPI
+## SteamAPI - {under development}
 
-Java API for Turkish <-> English, English -> English, and Turkish -> Turkish dictionary
-
-* `en-tr` and `tr-en` translations are retrieved from [*Tureng*](http://tureng.com/) and [*Zargan*](http://www2.zargan.com/).
-* `en-en` definitions are retrieved from [*Sozluk.Net*](http://www.sozluk.net/) and [*Babylon*](http://www.babylon.com/).
-* `tr-tr` definitions are retrieved from [*Sozluk.Net*](http://www.sozluk.net/).
+Java API for the online game platform [*Steam*](http://store.steampowered.com/)
 
 **How to use:**
 ```java
-BilingualDictAPI tureng = new TurengAPI();
-// input can be in Turkish or English
-Results results = tureng.translate("spit out");
-results.print();
-
-BilingualDictAPI zargan = new ZarganAPI();
-// input can be in Turkish or English
-results = zargan.translate("süpürmek");
-results.print();
-
-MonolingualDictAPI sozlukNet = new SozlukNetAPI();
-// input can be in Turkish or English
-results = sozlukNet.getDefinitionOf("pay");
-results.print();
-
-MonolingualDictAPI babylon = new BabylonAPI();
-// input can only be in English
-results = babylon.getDefinitionOf("get on");
-results.print();
+SteamAPI steam = new SteamAPI();
+Games games = steam.searchGame("company of heroes");
+games.printAll();
 ```
 
 **Output:**
 ```
-=============Tureng=============
-en-tr:	spit out -> (General, v.) söylemek
-en-tr:	spit out -> (General, v.) tükürmek
-en-tr:	spit out thick wads of phlegm -> (General, v.) balgam çıkarmak
-en-tr:	spit it out! -> (Colloquial) haydi söylesene!
-en-tr:	get chewed up and spit out -> (Idioms) kullanılmak
-en-tr:	get chewed up and spit out -> (Idioms) heba edilmek
-en-tr:	get chewed up and spit out -> (Idioms) bozuk para gibi harcanmak
-en-tr:	spit it out! -> (Speaking) çıkar ağzındaki baklayı
-en-tr:	spit (out) one's dummy -> (British Slang) öfke nöbetine girmek
-en-tr:	spit (out) one's dummy -> (British Slang) kendinden geçmek
-en-tr:	spit (out) one's dummy -> (British Slang) kriz geçirmek
-=============Tureng=============
-=============Zargan=============
-tr-en:	süpürmek -> (Fiil) to sweep
-tr-en:	süpürmek -> (Fiil) to brush
-tr-en:	hafif hafif süpürmek -> (Fiil) to whisk
-tr-en:	yukarıdan aşağıya doğru süpürmek -> (Fiil) to sweep down
-tr-en:	silip süpürmek -> (Fiil) to sweep
-tr-en:	bütün işleri süpürmek -> (Fiil) to make a clean sweep of it
-tr-en:	silip süpürmek -> (Fiil) to mop up profits
-tr-en:	silip süpürmek -> (Fiil) to mop up
-=============Zargan=============
-=============SozlukNet=============
-en-en:	Pay -> (v. t.) To cover, as bottom of a vessel, a seam, a spar, etc., with tar or pitch, or waterproof composition of tallow, resin, etc.; to smear.
-en-en:	Pay -> (v. t.) To satisfy, or content; specifically, to satisfy (another person) for service rendered, property delivered, etc.; to discharge one's obligation to; to make due return to; to compensate; to remunerate; to recompense; to requite; as, to pay workmen or servants.
-en-en:	Pay -> (v. t.) Hence, figuratively: To compensate justly; to requite according to merit; to reward; to punish; to retort or retaliate upon.
-en-en:	Pay -> (v. t.) To discharge, as a debt, demand, or obligation, by giving or doing what is due or required; to deliver the amount or value of to the person to whom it is owing; to discharge a debt by delivering (money owed).
-en-en:	Pay -> (v. t.) To discharge or fulfill, as a duy; to perform or render duty, as that which has been promised.
-en-en:	Pay -> (v. t.) To give or offer, without an implied obligation; as, to pay attention; to pay a visit.
-en-en:	Pay -> (v. i.) To give a recompense; to make payment, requital, or satisfaction; to discharge a debt.
-en-en:	Pay -> (v. i.) Hence, to make or secure suitable return for expense or trouble; to be remunerative or profitable; to be worth the effort or pains required; as, it will pay to ride; it will pay to wait; politeness always pays.
-en-en:	Pay -> (n.) Satisfaction; content.
-en-en:	Pay -> (n.) An equivalent or return for money due, goods purchased, or services performed; salary or wages for work or service; compensation; recompense; payment; hire; as, the pay of a clerk; the pay of a soldier.
-tr-tr:	pay -> Birden fazla kişi arasinda bölüşülmüş bir bütünden, bu kişilerin her birine düşen bölüm, hisse
-tr-tr:	pay -> Eşit bölüm
-tr-tr:	pay -> Bayagi kesirlerden birinin eşit parçalardan kaç tane alindigini gösteren sayi: paydanin üstüne yazilarak yatik bir çizgi ile ondan ayrılır
-=============SozlukNet=============
-=============Babylon=============
-en-en:	Get on -> embark
-en-en:	Get on -> enter a bus or train or plane (e.g. "She got on the bus about 40 minutes ago")
-en-en:	Get on -> proceed, advance
-en-en:	Get on -> succeed, manage well
-en-en:	Get on -> agree with
-=============Babylon=============
+=============<365820>=============
+title: Company of Heroes 2 - The British Forces
+price: 21,00 TL
+discounted price: 18,90 TL (-10%)
+=============<365820>=============
+=============<20540>=============
+title: Company of Heroes: Tales of Valor
+price: 31,00 TL
+review summary: Overwhelmingly Positive (95% of the 835 user reviews for this game are positive.)
+=============<20540>=============
+=============<231430>=============
+title: Company of Heroes 2
+price: 59,00 TL
+review summary: Mostly Positive (79% of the 17,813 user reviews for this game are positive.)
+=============<231430>=============
+=============<4560>=============
+title: Company of Heroes
+price: 18,00 TL
+review summary: Overwhelmingly Positive (96% of the 2,824 user reviews for this game are positive.)
+=============<4560>=============
+=============<9340>=============
+title: Company of Heroes: Opposing Fronts
+price: 31,00 TL
+review summary: Very Positive (93% of the 343 user reviews for this game are positive.)
+=============<9340>=============
+=============<317850>=============
+title: Company of Heroes 2 - Ardennes Assault
+price: 59,00 TL
+review summary: Mixed (66% of the 3 user reviews for this game are positive.)
+=============<317850>=============
+=============<260309>=============
+title: Company of Heroes 2 - The Western Front Armies
+=============<260309>=============
+=============<4560,9340,20540>=============
+title: Company of Heroes Complete Pack
+price: 59,00 TL
+review summary: Overwhelmingly Positive (95% of the 4,010 user reviews for this game are positive.)
+=============<4560,9340,20540>=============
+=============<231480,249082,249088>=============
+title: Company of Heroes 2 - Victory at Stalingrad Bundle
+price: 21,00 TL
+review summary: Positive (86% of the 45 user reviews for this game are positive.)
+=============<231480,249082,249088>=============
+=============<231473,231481,231482>=============
+title: Company of Heroes 2 - Soviet Skin: Four Color Belorussian Front Pack
+price: 11,00 TL
+review summary: Positive (100% of the 1 user reviews for this game are positive.)
+=============<231473,231481,231482>=============
+=============<231479,249081,249085,260301>=============
+title: Company of Heroes 2 - Case Blue Bundle
+price: 21,00 TL
+review summary: Mostly Positive (75% of the 69 user reviews for this game are positive.)
+=============<231479,249081,249085,260301>=============
+=============<287371,287370>=============
+title: Company of Heroes 2 - The Western Front Armies
+price: 31,00 TL
+review summary: Negative (0% of the 3 user reviews for this game are positive.)
+=============<287371,287370>=============
+=============<231477,231484,231485>=============
+title: Company of Heroes 2 - German Skin: Four Color Disruptive Pattern Bundle
+price: 11,00 TL
+review summary: Mostly Negative (25% of the 4 user reviews for this game are positive.)
+=============<231477,231484,231485>=============
+=============<231470,231471,231475,231476>=============
+title: Company of Heroes 2 - Heavy Bundle DLC
+price: 10,00 TL
+review summary: Negative (0% of the 4 user reviews for this game are positive.)
+=============<231470,231471,231475,231476>=============
+=============<323230>=============
+title: Company of Heroes 2 - Ardennes Assault: Fox Company Rangers
+price: 10,00 TL
+review summary: Negative (0% of the 1 user reviews for this game are positive.)
+=============<323230>=============
+=============<9300>=============
+title: Company of Heroes Singleplayer Demo
+price: Free Demo
+review summary: Mostly Positive (75% of the 8 user reviews for this game are positive.)
+=============<9300>=============
+=============<260290>=============
+title: Company of Heroes 2 - Southern Fronts Mission Pack
+price: 10,00 TL
+review summary: Positive (89% of the 28 user reviews for this game are positive.)
+=============<260290>=============
+=============<231480>=============
+title: Company of Heroes 2 - Victory at Stalingrad Mission Pack
+price: 18,00 TL
+review summary: Positive (94% of the 17 user reviews for this game are positive.)
+=============<231480>=============
+=============<231479>=============
+title: Company of Heroes 2 - Case Blue Mission Pack
+price: 18,00 TL
+review summary: Mostly Positive (70% of the 40 user reviews for this game are positive.)
+=============<231479>=============
+=============<12480>=============
+title: 9th Company: Roots Of Terror
+price: 18,00 TL
+review summary: Mixed (53% of the 89 user reviews for this game are positive.)
+=============<12480>=============
+=============<11480>=============
+title: Soldiers: Heroes of World War II
+price: 10,00 TL
+review summary: Mostly Positive (78% of the 99 user reviews for this game are positive.)
+=============<11480>=============
+=============<204860>=============
+title: Men of War: Condemned Heroes
+price: 18,00 TL
+review summary: Mixed (60% of the 115 user reviews for this game are positive.)
+=============<204860>=============
+=============<64000>=============
+title: Men of War: Assault Squad
+price: 18,00 TL
+review summary: Very Positive (91% of the 1,687 user reviews for this game are positive.)
+=============<64000>=============
+=============<34410>=============
+title: Death to Spies: Moment of Truth
+price: 18,00 TL
+review summary: Very Positive (91% of the 146 user reviews for this game are positive.)
+=============<34410>=============
+=============<215160>=============
+title: The Book of Unwritten Tales
+price: 31,00 TL
+review summary: Very Positive (91% of the 849 user reviews for this game are positive.)
+=============<215160>=============
 ```
