@@ -14,7 +14,7 @@ public class SteamAPI {
 
     }
 
-    public Games searchGame(String gameTitle, int upperLimit, SearchMode searchMode) {
+    public Games searchStore(String gameTitle, int upperLimit, SearchMode searchMode) {
 
         gameTitle = gameTitle.toLowerCase(Locale.ENGLISH);
         String sortBy = Utils.bringSortBy(searchMode);

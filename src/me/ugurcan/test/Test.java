@@ -17,7 +17,7 @@ public class Test {
         SearchMode searchMode = SearchMode.RELEVANCE; // see "SearchMode.java" for other search modes
 
         // search the Steam game store
-        Games games = steam.searchGame(gameTitle, upperLimit, searchMode);
+        Games games = steam.searchStore(gameTitle, upperLimit, searchMode);
         games.printAll();
 
         // retrieve extra info about a game

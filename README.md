@@ -11,7 +11,7 @@ int upperLimit = 5; // upper limit for the number of search results to be retrie
 SearchMode searchMode = SearchMode.RELEVANCE; // see "SearchMode.java" for other search modes
 
 // search the Steam game store
-Games games = steam.searchGame(gameTitle, upperLimit, searchMode);
+Games games = steam.searchStore(gameTitle, upperLimit, searchMode);
 games.printAll();
 
 // retrieve extra info about a game
