@@ -14,9 +14,10 @@ public class SteamAPI {
 
     }
 
-    public Games searchGame(String gameTitle, int upperLimit) {
+    public Games searchGame(String gameTitle, int upperLimit, SearchMode searchMode) {
 
         gameTitle = gameTitle.toLowerCase(Locale.ENGLISH);
+        String sortBy = Utils.bringSortBy(searchMode);
 
         Games games = new Games();
 
@@ -35,7 +36,7 @@ public class SteamAPI {
                 page++;
                 ///////////////////////
 
-                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + gameTitle + "&sort_by=_ASC&page=" + page).get();
+                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + gameTitle + "&sort_by=" + sortBy + "&page=" + page).get();
                 Elements elements = doc.getElementsByAttributeValue("id", "search_result_container").select("a");
 
                 for (Element element : elements) {

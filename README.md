@@ -6,53 +6,56 @@ Java API for [*Steam*](http://store.steampowered.com/), the online gaming platfo
 ```java
 SteamAPI steam = new SteamAPI();
 
-String gameTitle = "company of heroes";
+String gameTitle = "depth";
 int upperLimit = 5; // upper limit for the number of search results
-Games games = steam.searchGame(gameTitle, upperLimit);
+SearchMode searchMode = SearchMode.RELEVANCE; // see "SearchMode.java" for other search modes
+Games games = steam.searchGame(gameTitle, upperLimit, searchMode);
 
 games.printAll();
 ```
 
 **Output:**
 ```
-=============<365820>=============
-title: Company of Heroes 2 - The British Forces
-price: 21,00 TL
-discounted price: 18,90 TL (-10%)
+=============<274940>=============
+title: Depth
+price: 39,00 TL
+discounted price: 13,26 TL (-66%)
 platforms: [win]
-added on: 3 Sep, 2015
-image url: http://cdn.akamai.steamstatic.com/steam/apps/365820/capsule_sm_120.jpg?t=1436461308
-=============<365820>=============
-=============<20540>=============
-title: Company of Heroes: Tales of Valor
-price: 31,00 TL
+review summary: Very Positive (87% of the 3,967 user reviews for this game are positive.)
+added on: 3 Nov, 2014
+image url: http://cdn.akamai.steamstatic.com/steam/apps/274940/capsule_sm_120.jpg?t=1436473512
+=============<274940>=============
+=============<248530>=============
+title: Depth Hunter 2: Deep Dive
+price: 24,00 TL
+discounted price: 10,80 TL (-55%)
 platforms: [win]
-review summary: Overwhelmingly Positive (95% of the 835 user reviews for this game are positive.)
-added on: 9 Apr, 2009
-image url: http://cdn.akamai.steamstatic.com/steam/apps/20540/capsule_sm_120.jpg?t=1436461359
-=============<20540>=============
-=============<231430>=============
-title: Company of Heroes 2
-price: 59,00 TL
+review summary: Mostly Positive (71% of the 313 user reviews for this game are positive.)
+added on: 20 Aug, 2014
+image url: http://cdn.akamai.steamstatic.com/steam/apps/248530/capsule_sm_120.jpg?t=1428076528
+=============<248530>=============
+=============<570>=============
+title: Dota 2
+price: Free To Play
+platforms: [win, mac, linux, steamplay]
+review summary: Very Positive (93% of the 399,130 user reviews for this game are positive.)
+added on: 9 Jul, 2013
+image url: http://cdn.akamai.steamstatic.com/steam/apps/570/capsule_sm_120.jpg?t=1434653483
+=============<570>=============
+=============<346110>=============
+title: ARK: Survival Evolved
+price: 49,00 TL
+platforms: [win, mac, linux, steamplay]
+review summary: Mostly Positive (73% of the 19,874 user reviews for this game are positive.)
+added on: 2 Jun, 2015
+image url: http://cdn.akamai.steamstatic.com/steam/apps/346110/capsule_sm_120.jpg?t=1436434436
+=============<346110>=============
+=============<292030>=============
+title: The Witcher® 3: Wild Hunt
+price: 89,00 TL
 platforms: [win]
-review summary: Mostly Positive (79% of the 17,820 user reviews for this game are positive.)
-added on: 25 Jun, 2013
-image url: http://cdn.akamai.steamstatic.com/steam/apps/231430/capsule_sm_120.jpg?t=1436467696
-=============<231430>=============
-=============<4560>=============
-title: Company of Heroes
-price: 18,00 TL
-platforms: [win]
-review summary: Overwhelmingly Positive (96% of the 2,824 user reviews for this game are positive.)
-added on: 17 Jul, 2007
-image url: http://cdn.akamai.steamstatic.com/steam/apps/4560/capsule_sm_120.jpg?t=1436461368
-=============<4560>=============
-=============<9340>=============
-title: Company of Heroes: Opposing Fronts
-price: 31,00 TL
-platforms: [win]
-review summary: Very Positive (93% of the 343 user reviews for this game are positive.)
-added on: 27 Sep, 2007
-image url: http://cdn.akamai.steamstatic.com/steam/apps/9340/capsule_sm_120.jpg?t=1436461343
-=============<9340>=============
+review summary: Very Positive (93% of the 16,025 user reviews for this game are positive.)
+added on: 18 May, 2015
+image url: http://cdn.akamai.steamstatic.com/steam/apps/292030/capsule_sm_120.jpg?t=1436350247
+=============<292030>=============
 ```

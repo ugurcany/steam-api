@@ -1,6 +1,7 @@
 package me.ugurcan.test;
 
 import me.ugurcan.steamapi.Games;
+import me.ugurcan.steamapi.SearchMode;
 import me.ugurcan.steamapi.SteamAPI;
 
 public class Test {
@@ -9,9 +10,10 @@ public class Test {
 
         SteamAPI steam = new SteamAPI();
 
-        String gameTitle = "company of heroes";
+        String gameTitle = "depth";
         int upperLimit = 5; // upper limit for the number of search results
-        Games games = steam.searchGame(gameTitle, upperLimit);
+        SearchMode searchMode = SearchMode.RELEVANCE; // see "SearchMode.java" for other search modes
+        Games games = steam.searchGame(gameTitle, upperLimit, searchMode);
 
         games.printAll();
 
