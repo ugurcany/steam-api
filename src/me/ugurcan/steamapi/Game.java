@@ -17,20 +17,24 @@ public class Game {
     public Game(String id, String title, String price, String discount, String discountedPrice, String reviewSummary, ArrayList<String> platforms, String addedOn, String imageURL) {
 
         this.id = id;
+
         this.title = title;
 
         if (price.equals(""))
             this.price = "?";
         else
             this.price = price;
+
         if (discount.equals(""))
             this.discount = "?";
         else
             this.discount = discount;
+
         if (discountedPrice.equals(""))
             this.discountedPrice = "?";
         else
             this.discountedPrice = discountedPrice;
+
         if (reviewSummary.equals(""))
             this.reviewSummary = "?";
         else

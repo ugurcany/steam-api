@@ -109,4 +109,50 @@ public class SteamAPI {
 
     }
 
+    public GameExtra retrieveExtraInfo(String gameId) {
+
+        GameExtra gameExtra = null;
+
+        try {
+
+            Document doc = Jsoup.connect("http://store.steampowered.com/app/" + gameId).get();
+
+            //description
+            String description = doc.getElementsByClass("game_description_snippet").text().trim();
+
+            //headerImageURL
+            String headerImageURL = doc.getElementsByAttributeValue("rel", "image_src").attr("href").trim();
+
+            //release date
+            String releaseDate = doc.getElementsByClass("date").text().trim();
+
+            //metascore
+            String metascore = doc.getElementsByAttributeValue("id", "game_area_metascore").text().trim();
+
+            //details
+            ArrayList<String> details = new ArrayList<String>();
+            Elements detailsElms = doc.getElementsByClass("game_area_details_specs");
+            for (Element detailElm : detailsElms) {
+                String detail = detailElm.text().trim();
+                details.add(detail);
+            }
+
+            //tags
+            ArrayList<String> tags = new ArrayList<String>();
+            Elements tagElms = doc.getElementsByClass("glance_tags").select("a");
+            for (Element tagElm : tagElms) {
+                String tag = tagElm.text().trim();
+                tags.add(tag);
+            }
+
+            gameExtra = new GameExtra(gameId, description, headerImageURL, releaseDate, metascore, details, tags);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return gameExtra;
+
+    }
+
 }
