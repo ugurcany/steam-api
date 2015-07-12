@@ -120,7 +120,7 @@ public class GameExtra {
     // print neatly
     @Override
     public String toString() {
-        String printOut = "=============<" + id + "-extra>=============\n";
+        String printOut = "=============<id: " + id + " - extra>=============\n";
 
         if (!description.equals("?"))
             printOut += "description: " + description + "\n";
@@ -143,7 +143,7 @@ public class GameExtra {
         if (!tags.isEmpty())
             printOut += "tags: " + tags + "\n";
 
-        printOut += "=============<" + id + "-extra>=============";
+        printOut += "=============<id: " + id + " - extra>=============";
         return printOut;
     }
 

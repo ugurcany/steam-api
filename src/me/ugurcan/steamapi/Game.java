@@ -138,7 +138,7 @@ public class Game {
     // print neatly
     @Override
     public String toString() {
-        String printOut = "=============<" + id + ">=============\n";
+        String printOut = "=============<id: " + id + ">=============\n";
 
         printOut += "title: " + title + "\n";
 
@@ -160,7 +160,7 @@ public class Game {
         if (!imageURL.equals("?"))
             printOut += "image url: " + imageURL + "\n";
 
-        printOut += "=============<" + id + ">=============";
+        printOut += "=============<id: " + id + ">=============";
         return printOut;
     }
 
