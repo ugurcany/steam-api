@@ -1,6 +1,6 @@
 # steam-api
 
-Java library to search and retrieve game data from [*Steam*](http://store.steampowered.com/), the online gaming platform
+A Java library to search and retrieve game data from [*Steam*](http://store.steampowered.com/), the online gaming platform
 
 **How to use:**
 ```java
