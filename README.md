@@ -1,6 +1,6 @@
 ## SteamAPI - {under development}
 
-Java API for searching and retrieving game info from [*Steam*](http://store.steampowered.com/), the online gaming platform
+Java library for searching and retrieving game info from [*Steam*](http://store.steampowered.com/), the online gaming platform
 
 **How to use:**
 ```java
