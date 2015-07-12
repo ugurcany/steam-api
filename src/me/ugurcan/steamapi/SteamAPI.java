@@ -18,14 +18,14 @@ public class SteamAPI {
 
     }
 
-    public Games searchStore(String gameTitle, int upperLimit, SearchMode searchMode) {
+    public Games searchStore(String gameTitle, int numOfResults, SearchMode searchMode) {
 
         gameTitle = gameTitle.toLowerCase(Locale.ENGLISH);
         String sortBy = Utils.bringSortBy(searchMode);
 
         Games games = new Games();
 
-        if (upperLimit <= 0)
+        if (numOfResults <= 0)
             return games;
 
         try {
@@ -95,12 +95,12 @@ public class SteamAPI {
                     ///////////////////////
                     stillFound = true;
                     count++;
-                    if (count == upperLimit)
+                    if (count == numOfResults)
                         break;
                     ///////////////////////
                 }
 
-                if (count == upperLimit)
+                if (count == numOfResults)
                     break;
             }
 

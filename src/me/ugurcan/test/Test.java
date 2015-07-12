@@ -14,11 +14,11 @@ public class Test {
         SteamAPI steam = new SteamAPI(CountryCode.US);
 
         String gameTitle = "depth";
-        int upperLimit = 5; // upper limit for the number of search results to be retrieved
+        int numOfResults = 5; // upper limit for the number of games to be retrieved
         SearchMode searchMode = SearchMode.RELEVANCE; // see "SearchMode.java" for other search modes
 
         // search the Steam game store
-        Games games = steam.searchStore(gameTitle, upperLimit, searchMode);
+        Games games = steam.searchStore(gameTitle, numOfResults, searchMode);
         games.printAll();
 
         // retrieve extra info about a game
