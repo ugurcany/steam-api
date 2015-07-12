@@ -21,6 +21,8 @@ public class Test {
         Games games = steam.searchForGames(gameTitle, numOfResults, searchMode);
         games.printAll();
 
+        System.out.println();
+
         // retrieve game data
         Game game = games.get(0);
         steam.fillWithDetails(game);

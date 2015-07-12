@@ -14,6 +14,8 @@ SearchMode searchMode = SearchMode.RELEVANCE; // see "SearchMode.java" for other
 Games games = steam.searchForGames(gameTitle, numOfResults, searchMode);
 games.printAll();
 
+System.out.println();
+
 // retrieve game data
 Game game = games.get(0);
 steam.fillWithDetails(game);
@@ -62,6 +64,7 @@ review summary: Çok Olumlu (Bu oyun için yazılan 57 adet kullanıcı inceleme
 added on: 13 Ağu 2013
 image url: http://cdn.akamai.steamstatic.com/steam/apps/212894/capsule_sm_120.jpg?t=1381766370
 =============<id: 212894>=============
+
 =============<id: 205100>=============
 title: Dishonored
 price: 31,00 TL
