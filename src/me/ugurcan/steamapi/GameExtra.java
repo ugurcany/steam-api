@@ -4,15 +4,16 @@ import java.util.ArrayList;
 
 public class GameExtra {
 
-    String id;
-    String description;
-    String headerImageURL;
-    String releaseDate;
-    String metascore;
-    ArrayList<String> details;
-    ArrayList<String> tags;
+    private String id;
+    private String description;
+    private String headerImageURL;
+    private ArrayList<String> screenshotURLs;
+    private String releaseDate;
+    private String metascore;
+    private ArrayList<String> details;
+    private ArrayList<String> tags;
 
-    public GameExtra(String id, String description, String headerImageURL, String releaseDate, String metascore, ArrayList<String> details, ArrayList<String> tags) {
+    public GameExtra(String id, String description, String headerImageURL, ArrayList<String> screenshotURLs, String releaseDate, String metascore, ArrayList<String> details, ArrayList<String> tags) {
 
         this.id = id;
 
@@ -25,6 +26,8 @@ public class GameExtra {
             this.headerImageURL = "?";
         else
             this.headerImageURL = headerImageURL;
+
+        this.screenshotURLs = screenshotURLs;
 
         if (releaseDate.equals(""))
             this.releaseDate = "?";
@@ -67,6 +70,15 @@ public class GameExtra {
 
     protected void setHeaderImageURL(String headerImageURL) {
         this.headerImageURL = headerImageURL;
+    }
+
+    // screenshotURLs
+    public ArrayList<String> getScreenshotURLs() {
+        return screenshotURLs;
+    }
+
+    protected void setScreenshotURLs(ArrayList<String> screenshotURLs) {
+        this.screenshotURLs = screenshotURLs;
     }
 
     // release date
@@ -115,6 +127,9 @@ public class GameExtra {
 
         if (!headerImageURL.equals("?"))
             printOut += "header image url: " + headerImageURL + "\n";
+
+        if (!screenshotURLs.isEmpty())
+            printOut += "screenshot urls: " + screenshotURLs + "\n";
 
         if (!releaseDate.equals("?"))
             printOut += "release date: " + releaseDate + "\n";

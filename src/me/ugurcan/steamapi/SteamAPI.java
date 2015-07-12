@@ -10,7 +10,11 @@ import java.util.Locale;
 
 public class SteamAPI {
 
-    public SteamAPI() {
+    private String cc;
+
+    public SteamAPI(CountryCode countryCode) {
+
+        this.cc = countryCode.toString().toLowerCase(Locale.ENGLISH);
 
     }
 
@@ -36,7 +40,7 @@ public class SteamAPI {
                 page++;
                 ///////////////////////
 
-                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + gameTitle + "&sort_by=" + sortBy + "&page=" + page).get();
+                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + gameTitle + "&sort_by=" + sortBy + "&page=" + page + "&cc=" + cc).get();
                 Elements elements = doc.getElementsByAttributeValue("id", "search_result_container").select("a");
 
                 for (Element element : elements) {
@@ -115,13 +119,21 @@ public class SteamAPI {
 
         try {
 
-            Document doc = Jsoup.connect("http://store.steampowered.com/app/" + gameId).get();
+            Document doc = Jsoup.connect("http://store.steampowered.com/app/" + gameId + "/?cc=" + cc).get();
 
             //description
             String description = doc.getElementsByClass("game_description_snippet").text().trim();
 
             //headerImageURL
             String headerImageURL = doc.getElementsByAttributeValue("rel", "image_src").attr("href").trim();
+
+            //screenshotURLs
+            ArrayList<String> screenshotURLs = new ArrayList<String>();
+            Elements ssUrlElms = doc.getElementsByClass("highlight_screenshot_link");
+            for (Element ssUrlElm : ssUrlElms) {
+                String screenshotURL = ssUrlElm.attr("href").trim();
+                screenshotURLs.add(screenshotURL);
+            }
 
             //release date
             String releaseDate = doc.getElementsByClass("date").text().trim();
@@ -131,8 +143,8 @@ public class SteamAPI {
 
             //details
             ArrayList<String> details = new ArrayList<String>();
-            Elements detailsElms = doc.getElementsByClass("game_area_details_specs");
-            for (Element detailElm : detailsElms) {
+            Elements detailElms = doc.getElementsByClass("game_area_details_specs");
+            for (Element detailElm : detailElms) {
                 String detail = detailElm.text().trim();
                 details.add(detail);
             }
@@ -145,7 +157,7 @@ public class SteamAPI {
                 tags.add(tag);
             }
 
-            gameExtra = new GameExtra(gameId, description, headerImageURL, releaseDate, metascore, details, tags);
+            gameExtra = new GameExtra(gameId, description, headerImageURL, screenshotURLs, releaseDate, metascore, details, tags);
 
         } catch (Exception ex) {
             ex.printStackTrace();

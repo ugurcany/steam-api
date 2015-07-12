@@ -1,5 +1,6 @@
 package me.ugurcan.test;
 
+import me.ugurcan.steamapi.CountryCode;
 import me.ugurcan.steamapi.Game;
 import me.ugurcan.steamapi.GameExtra;
 import me.ugurcan.steamapi.Games;
@@ -10,7 +11,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        SteamAPI steam = new SteamAPI();
+        SteamAPI steam = new SteamAPI(CountryCode.US);
 
         String gameTitle = "depth";
         int upperLimit = 5; // upper limit for the number of search results to be retrieved
