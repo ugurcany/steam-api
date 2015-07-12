@@ -7,12 +7,12 @@ public class Game {
     private String id;
     private String title;
     private String price;
-    private String discount;
+    private String discountPercent;
     private String discountedPrice;
     private String reviewSummary;
     private ArrayList<String> platforms;
     private String addedOn;
-    private String imageURL;
+    private String thumbnailURL;
     // ================== EXTRA ==================
     private String description;
     private String headerImageURL;
@@ -22,7 +22,7 @@ public class Game {
     private ArrayList<String> details;
     private ArrayList<String> tags;
 
-    public Game(String id, String title, String price, String discount, String discountedPrice, String reviewSummary, ArrayList<String> platforms, String addedOn, String imageURL) {
+    protected Game(String id, String title, String price, String discountPercent, String discountedPrice, String reviewSummary, ArrayList<String> platforms, String addedOn, String thumbnailURL) {
 
         this.id = id;
 
@@ -33,10 +33,10 @@ public class Game {
         else
             this.price = price;
 
-        if (discount.equals(""))
-            this.discount = "?";
+        if (discountPercent.equals(""))
+            this.discountPercent = "?";
         else
-            this.discount = discount;
+            this.discountPercent = discountPercent;
 
         if (discountedPrice.equals(""))
             this.discountedPrice = "?";
@@ -55,10 +55,10 @@ public class Game {
         else
             this.addedOn = addedOn;
 
-        if (imageURL.equals(""))
-            this.imageURL = "?";
+        if (thumbnailURL.equals(""))
+            this.thumbnailURL = "?";
         else
-            this.imageURL = imageURL;
+            this.thumbnailURL = thumbnailURL;
 
         // ================== EXTRA ==================
         this.description = "?";
@@ -107,13 +107,13 @@ public class Game {
         this.discountedPrice = discountedPrice;
     }
 
-    // discount
-    public String getDiscount() {
-        return discount;
+    // discount percent
+    public String getDiscountPercent() {
+        return discountPercent;
     }
 
-    protected void setDiscount(String discount) {
-        this.discount = discount;
+    protected void setDiscountPercent(String discountPercent) {
+        this.discountPercent = discountPercent;
     }
 
     // review summary
@@ -143,13 +143,13 @@ public class Game {
         this.addedOn = addedOn;
     }
 
-    // image url
-    public String getImageURL() {
-        return imageURL;
+    // thumbnail URL
+    public String getThumbnailURL() {
+        return thumbnailURL;
     }
 
-    protected void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    protected void setThumbnailURL(String thumbnailURL) {
+        this.thumbnailURL = thumbnailURL;
     }
 
     // ================== EXTRA ==================
@@ -162,7 +162,7 @@ public class Game {
         this.description = description;
     }
 
-    // headerImageURL
+    // header image URL
     public String getHeaderImageURL() {
         return headerImageURL;
     }
@@ -171,7 +171,7 @@ public class Game {
         this.headerImageURL = headerImageURL;
     }
 
-    // screenshotURLs
+    // screenshot URLs
     public ArrayList<String> getScreenshotURLs() {
         return screenshotURLs;
     }
@@ -226,8 +226,8 @@ public class Game {
         if (!price.equals("?"))
             printOut += "price: " + price + "\n";
 
-        if (!discount.equals("?"))
-            printOut += "discounted price: " + discountedPrice + " (" + discount + ")" + "\n";
+        if (!discountedPrice.equals("?") && !discountPercent.equals("?"))
+            printOut += "discounted price: " + discountedPrice + " (" + discountPercent + ")" + "\n";
 
         if (platforms != null && !platforms.isEmpty())
             printOut += "platforms: " + platforms + "\n";
@@ -238,8 +238,8 @@ public class Game {
         if (!addedOn.equals("?"))
             printOut += "added on: " + addedOn + "\n";
 
-        if (!imageURL.equals("?"))
-            printOut += "image url: " + imageURL + "\n";
+        if (!thumbnailURL.equals("?"))
+            printOut += "thumbnail url: " + thumbnailURL + "\n";
 
         // ================== EXTRA ==================
         if (!description.equals("") && !description.equals("?"))

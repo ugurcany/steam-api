@@ -60,13 +60,13 @@ public class SteamAPI {
                     //title
                     String title = element.getElementsByClass("title").text().trim();
 
-                    //discount
-                    String discount = element.getElementsByClass("search_discount").text().trim();
+                    //discount percent
+                    String discountPercent = element.getElementsByClass("search_discount").text().trim();
 
                     //price & discounted price
                     String price;
                     String discountedPrice;
-                    if (discount.equals("")) {
+                    if (discountPercent.equals("")) {
                         price = element.getElementsByClass("search_price").text().trim();
                         discountedPrice = "";
                     } else {
@@ -97,10 +97,10 @@ public class SteamAPI {
                     //added on
                     String addedOn = element.getElementsByClass("search_released").text().trim();
 
-                    //image url
-                    String imageURL = element.select("img").attr("src").trim();
+                    //thumbnail url
+                    String thumbnailURL = element.select("img").attr("src").trim();
 
-                    games.add(new Game(id, title, price, discount, discountedPrice, reviewSummary, platforms, addedOn, imageURL));
+                    games.add(new Game(id, title, price, discountPercent, discountedPrice, reviewSummary, platforms, addedOn, thumbnailURL));
                     ///////////////////////
                     stillFound = true;
                     count++;

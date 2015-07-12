@@ -13,7 +13,7 @@ public class Test {
 
         SteamAPI steam = new SteamAPI(CountryCode.TR, Language.TURKISH);
 
-        String gameTitle = "dishonored";
+        String gameTitle = "warhammer";
         int numOfResults = 5; // upper limit for the number of games to be retrieved
         SearchMode searchMode = SearchMode.RELEVANCE; // see "SearchMode.java" for other search modes
 

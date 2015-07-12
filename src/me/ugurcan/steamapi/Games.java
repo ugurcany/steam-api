@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Games extends ArrayList<Game> {
 
-    public Games() {
+    protected Games() {
 
     }
 

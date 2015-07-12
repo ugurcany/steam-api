@@ -5,6 +5,7 @@ public class Utils {
     protected static String bringSortBy(SearchMode searchMode) {
 
         String sortBy;
+
         if (searchMode.equals(SearchMode.RELEASEDATE))
             sortBy = "Released_DESC";
         else if (searchMode.equals(SearchMode.NAME))
