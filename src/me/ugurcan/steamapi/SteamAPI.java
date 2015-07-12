@@ -1,5 +1,6 @@
 package me.ugurcan.steamapi;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -11,22 +12,30 @@ import java.util.Locale;
 public class SteamAPI {
 
     private String cc;
+    private String lang;
 
-    public SteamAPI(CountryCode countryCode) {
+    public SteamAPI(CountryCode countryCode, Language language) {
 
         this.cc = countryCode.toString().toLowerCase(Locale.ENGLISH);
+        this.lang = language.toString().toLowerCase(Locale.ENGLISH);
 
     }
 
-    public Games searchStore(String gameTitle, int numOfResults, SearchMode searchMode) {
+    public Games searchForGames(String gameTitle, int numOfResults, SearchMode searchMode) {
 
         gameTitle = gameTitle.toLowerCase(Locale.ENGLISH);
         String sortBy = Utils.bringSortBy(searchMode);
 
         Games games = new Games();
 
-        if (numOfResults <= 0)
+        if (gameTitle.length() < 2) {
+            System.out.println("Invalid param: gameTitle");
             return games;
+        }
+        if (numOfResults <= 0) {
+            System.out.println("Invalid param: numOfResults");
+            return games;
+        }
 
         try {
 
@@ -40,7 +49,7 @@ public class SteamAPI {
                 page++;
                 ///////////////////////
 
-                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + gameTitle + "&sort_by=" + sortBy + "&page=" + page + "&cc=" + cc).get();
+                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + gameTitle + "&sort_by=" + sortBy + "&page=" + page + "&cc=" + cc + "&l=" + lang).timeout(10000).get();
                 Elements elements = doc.getElementsByAttributeValue("id", "search_result_container").select("a");
 
                 for (Element element : elements) {
@@ -113,19 +122,52 @@ public class SteamAPI {
 
     }
 
-    public GameExtra retrieveExtraInfo(String gameId) {
+    public void fillWithDetails(Game game) {
 
-        GameExtra gameExtra = null;
+        if (game == null || game.getId().equals("")) {
+            System.out.println("Invalid game!");
+            return;
+        }
 
         try {
 
-            Document doc = Jsoup.connect("http://store.steampowered.com/app/" + gameId + "/?cc=" + cc).get();
+            /*Connection connection1 = Jsoup.connect("http://store.steampowered.com/app/" + gameId + "/?cc=" + cc + "&l=" + lang);
+
+            connection1.cookie("__utma", "128748750.1492747381.1436673016.1436673016.1436673016.1");
+            connection1.cookie("__utmb", "128748750.0.10.1436673016");
+            connection1.cookie("__utmc", "128748750");
+            connection1.cookie("__utmz", "128748750.1436673016.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)");
+            connection1.cookie("birthtime", "1861891199");
+            connection1.cookie("lastagecheckage", "1-January-1911");
+            connection1.cookie("snr", "1_agecheck_agecheck__18|http%3A%2F%2Fstore.steampowered.com%2Fagecheck%2Fapp%2F50130%2F%23");
+            connection1.cookie("timezoneOffset", "10800,0");
+            Connection.Response response = connection1.execute();
+            Document doc = response.parse();*/
+
+            String url = "http://store.steampowered.com/agecheck/app/" + game.getId();
+
+            Connection.Response agecheckForm = Jsoup.connect(url).timeout(10000)
+                    .data("snr", "1_agecheck_agecheck__age-gate")
+                    .data("ageDay", "1")
+                    .data("ageMonth", "January")
+                    .data("ageYear", "1900")
+                    .method(Connection.Method.POST)
+                    .execute();
+            Document doc = Jsoup.connect("http://store.steampowered.com/app/" + game.getId() + "?l=" + lang + "&cc=" + cc).timeout(10000)
+                    /*.data("snr", "1_agecheck_agecheck__age-gate")
+                    .data("ageDay", "1")
+                    .data("ageMonth", "January")
+                    .data("ageYear", "1900")*/
+                    .cookies(agecheckForm.cookies())
+                    .get();
 
             //description
             String description = doc.getElementsByClass("game_description_snippet").text().trim();
+            game.setDescription(description);
 
             //headerImageURL
             String headerImageURL = doc.getElementsByAttributeValue("rel", "image_src").attr("href").trim();
+            game.setHeaderImageURL(headerImageURL);
 
             //screenshotURLs
             ArrayList<String> screenshotURLs = new ArrayList<String>();
@@ -134,12 +176,15 @@ public class SteamAPI {
                 String screenshotURL = ssUrlElm.attr("href").trim();
                 screenshotURLs.add(screenshotURL);
             }
+            game.setScreenshotURLs(screenshotURLs);
 
             //release date
             String releaseDate = doc.getElementsByClass("date").text().trim();
+            game.setReleaseDate(releaseDate);
 
             //metascore
             String metascore = doc.getElementsByAttributeValue("id", "game_area_metascore").text().trim();
+            game.setMetascore(metascore);
 
             //details
             ArrayList<String> details = new ArrayList<String>();
@@ -148,6 +193,7 @@ public class SteamAPI {
                 String detail = detailElm.text().trim();
                 details.add(detail);
             }
+            game.setDetails(details);
 
             //tags
             ArrayList<String> tags = new ArrayList<String>();
@@ -156,14 +202,11 @@ public class SteamAPI {
                 String tag = tagElm.text().trim();
                 tags.add(tag);
             }
-
-            gameExtra = new GameExtra(gameId, description, headerImageURL, screenshotURLs, releaseDate, metascore, details, tags);
+            game.setTags(tags);
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-        return gameExtra;
 
     }
 

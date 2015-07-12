@@ -13,6 +13,14 @@ public class Game {
     private ArrayList<String> platforms;
     private String addedOn;
     private String imageURL;
+    // ================== EXTRA ==================
+    private String description;
+    private String headerImageURL;
+    private ArrayList<String> screenshotURLs;
+    private String releaseDate;
+    private String metascore;
+    private ArrayList<String> details;
+    private ArrayList<String> tags;
 
     public Game(String id, String title, String price, String discount, String discountedPrice, String reviewSummary, ArrayList<String> platforms, String addedOn, String imageURL) {
 
@@ -51,6 +59,15 @@ public class Game {
             this.imageURL = "?";
         else
             this.imageURL = imageURL;
+
+        // ================== EXTRA ==================
+        this.description = "?";
+        this.headerImageURL = "?";
+        this.screenshotURLs = null;
+        this.releaseDate = "?";
+        this.metascore = "?";
+        this.details = null;
+        this.tags = null;
 
     }
 
@@ -135,6 +152,70 @@ public class Game {
         this.imageURL = imageURL;
     }
 
+    // ================== EXTRA ==================
+    // description
+    public String getDescription() {
+        return description;
+    }
+
+    protected void setDescription(String description) {
+        this.description = description;
+    }
+
+    // headerImageURL
+    public String getHeaderImageURL() {
+        return headerImageURL;
+    }
+
+    protected void setHeaderImageURL(String headerImageURL) {
+        this.headerImageURL = headerImageURL;
+    }
+
+    // screenshotURLs
+    public ArrayList<String> getScreenshotURLs() {
+        return screenshotURLs;
+    }
+
+    protected void setScreenshotURLs(ArrayList<String> screenshotURLs) {
+        this.screenshotURLs = screenshotURLs;
+    }
+
+    // release date
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    protected void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    // metascore
+    public String getMetascore() {
+        return metascore;
+    }
+
+    protected void setMetascore(String metascore) {
+        this.metascore = metascore;
+    }
+
+    // tags
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    protected void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
+
+    // details
+    public ArrayList<String> getDetails() {
+        return details;
+    }
+
+    protected void setDetails(ArrayList<String> details) {
+        this.details = details;
+    }
+
     // print neatly
     @Override
     public String toString() {
@@ -148,7 +229,7 @@ public class Game {
         if (!discount.equals("?"))
             printOut += "discounted price: " + discountedPrice + " (" + discount + ")" + "\n";
 
-        if (!platforms.isEmpty())
+        if (platforms != null && !platforms.isEmpty())
             printOut += "platforms: " + platforms + "\n";
 
         if (!reviewSummary.equals("?"))
@@ -159,6 +240,28 @@ public class Game {
 
         if (!imageURL.equals("?"))
             printOut += "image url: " + imageURL + "\n";
+
+        // ================== EXTRA ==================
+        if (!description.equals("") && !description.equals("?"))
+            printOut += "description: " + description + "\n";
+
+        if (!headerImageURL.equals("") && !headerImageURL.equals("?"))
+            printOut += "header image url: " + headerImageURL + "\n";
+
+        if (screenshotURLs != null && !screenshotURLs.isEmpty())
+            printOut += "screenshot urls: " + screenshotURLs + "\n";
+
+        if (!releaseDate.equals("") && !releaseDate.equals("?"))
+            printOut += "release date: " + releaseDate + "\n";
+
+        if (!metascore.equals("") && !metascore.equals("?"))
+            printOut += "metascore: " + metascore + "\n";
+
+        if (details != null && !details.isEmpty())
+            printOut += "details: " + details + "\n";
+
+        if (tags != null && !tags.isEmpty())
+            printOut += "tags: " + tags + "\n";
 
         printOut += "=============<id: " + id + ">=============";
         return printOut;
