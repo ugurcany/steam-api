@@ -2,7 +2,7 @@ package me.ugurcan.steamapi;
 
 public class Utils {
 
-    protected static String bringSortBy(SearchMode searchMode) {
+    /*protected static String bringSortBy(SearchMode searchMode) {
 
         String sortBy;
 
@@ -21,6 +21,6 @@ public class Utils {
 
         return sortBy;
 
-    }
+    }*/
 
 }

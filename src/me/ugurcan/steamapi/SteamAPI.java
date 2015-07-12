@@ -24,7 +24,7 @@ public class SteamAPI {
     public Games searchForGames(String gameTitle, int numOfResults, SearchMode searchMode) {
 
         gameTitle = gameTitle.toLowerCase(Locale.ENGLISH);
-        String sortBy = Utils.bringSortBy(searchMode);
+        String sortBy = searchMode.getSortBy();
 
         Games games = new Games();
 
