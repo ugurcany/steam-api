@@ -23,10 +23,14 @@ public class Test {
 
         System.out.println();
 
+        long startTime = System.currentTimeMillis();
         // retrieve game data
         Game game = games.get(0);
         steam.fillWithDetails(game);
         System.out.println(game);
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println(totalTime);
 
     }
 

@@ -14,6 +14,8 @@ public class SteamAPI {
     private String cc;
     private String lang;
 
+    private final int timeout = 10000;
+
     public SteamAPI(CountryCode countryCode, Language language) {
 
         this.cc = countryCode.toString().toLowerCase(Locale.ENGLISH);
@@ -49,7 +51,9 @@ public class SteamAPI {
                 page++;
                 ///////////////////////
 
-                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + gameTitle + "&sort_by=" + sortBy + "&page=" + page + "&cc=" + cc + "&l=" + lang).timeout(10000).get();
+                Document doc = Jsoup.connect("http://store.steampowered.com/search/?term=" + gameTitle + "&sort_by=" + sortBy + "&page=" + page + "&cc=" + cc + "&l=" + lang)
+                                    .timeout(timeout)
+                                    .get();
                 Elements elements = doc.getElementsByAttributeValue("id", "search_result_container").select("a");
 
                 for (Element element : elements) {
@@ -131,34 +135,23 @@ public class SteamAPI {
 
         try {
 
-            /*Connection connection1 = Jsoup.connect("http://store.steampowered.com/app/" + gameId + "/?cc=" + cc + "&l=" + lang);
-
-            connection1.cookie("__utma", "128748750.1492747381.1436673016.1436673016.1436673016.1");
-            connection1.cookie("__utmb", "128748750.0.10.1436673016");
-            connection1.cookie("__utmc", "128748750");
-            connection1.cookie("__utmz", "128748750.1436673016.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)");
-            connection1.cookie("birthtime", "1861891199");
-            connection1.cookie("lastagecheckage", "1-January-1911");
-            connection1.cookie("snr", "1_agecheck_agecheck__18|http%3A%2F%2Fstore.steampowered.com%2Fagecheck%2Fapp%2F50130%2F%23");
-            connection1.cookie("timezoneOffset", "10800,0");
-            Connection.Response response = connection1.execute();
-            Document doc = response.parse();*/
-
-            String url = "http://store.steampowered.com/agecheck/app/" + game.getId();
-
-            Connection.Response agecheckForm = Jsoup.connect(url).timeout(10000)
+            /*Connection.Response agecheckForm = Jsoup.connect("http://store.steampowered.com/agecheck/app/" + game.getId()).timeout(10000)
                     .data("snr", "1_agecheck_agecheck__age-gate")
                     .data("ageDay", "1")
                     .data("ageMonth", "January")
                     .data("ageYear", "1900")
                     .method(Connection.Method.POST)
                     .execute();
-            Document doc = Jsoup.connect("http://store.steampowered.com/app/" + game.getId() + "?l=" + lang + "&cc=" + cc).timeout(10000)
+
+            System.out.println(agecheckForm.cookies());*/
+
+            Document doc = Jsoup.connect("http://store.steampowered.com/app/" + game.getId() + "?l=" + lang + "&cc=" + cc).timeout(timeout)
                     /*.data("snr", "1_agecheck_agecheck__age-gate")
                     .data("ageDay", "1")
                     .data("ageMonth", "January")
-                    .data("ageYear", "1900")*/
-                    .cookies(agecheckForm.cookies())
+                    .data("ageYear", "1900")
+                    .cookies(agecheckForm.cookies())*/
+                    .cookie("birthtime", "-2208959999")
                     .get();
 
             //description
